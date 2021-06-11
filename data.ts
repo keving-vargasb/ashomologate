@@ -1,4 +1,4 @@
-import { AdminsegCountry } from './interfaces';
+import { AdminsegCountry, AdminsegGender } from './interfaces';
 
 const adminsegCountries: AdminsegCountry[] = [
   {
@@ -208,4 +208,17 @@ const adminsegCountries: AdminsegCountry[] = [
   }
 ];
 
-export { adminsegCountries };
+const adminsegGenders: AdminsegGender[] = [
+  {
+    value: 4,
+    name: 'Male',
+    vtioID: 1
+  },
+  {
+    value: 5,
+    name: 'Female',
+    vtioID: 2
+  }
+];
+
+export { adminsegCountries, adminsegGenders };

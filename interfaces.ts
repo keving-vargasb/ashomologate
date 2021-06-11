@@ -4,4 +4,10 @@ interface AdminsegCountry {
   code: string;
 }
 
-export { AdminsegCountry };
+interface AdminsegGender {
+  value: number;
+  name: string;
+  vtioID: number;
+}
+
+export { AdminsegCountry, AdminsegGender };

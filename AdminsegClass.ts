@@ -1,5 +1,5 @@
-import { adminsegCountries } from './data';
-import { AdminsegCountry } from './interfaces';
+import { adminsegCountries, adminsegGenders } from './data';
+import { AdminsegCountry, AdminsegGender } from './interfaces';
 
 export class Adminseg {
   private _application: any;
@@ -16,7 +16,13 @@ export class Adminseg {
     const findedCountry = adminsegCountries.find(
       country => country.code === iso3Code
     );
-    if (!findedCountry) throw 'country_not_found';
+    if (!findedCountry) throw new Error('country_not_found');
     return findedCountry;
+  }
+
+  homologateGender(id: number): AdminsegGender {
+    const findedGender = adminsegGenders.find(gender => gender.vtioID === id);
+    if (!findedGender) throw new Error('gender_not_found');
+    return findedGender;
   }
 }
