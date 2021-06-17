@@ -1,24 +1,5 @@
-import {
-  adminsegFrequencies,
-  adminsegGenders,
-  adminsegHeightUnits,
-  adminsegPersonTypes,
-  adminsegPhoneTypes,
-  adminsegProducts,
-  adminsegRelationships
-} from './data';
-import {
-  AdminsegFrequency,
-  AdminsegGender,
-  AdminsegHeightUnit,
-  AdminsegIdentityType,
-  AdminsegPersonType,
-  AdminsegPhoneType,
-  AdminsegProduct,
-  AdminsegRelationship,
-  AdminsegWeightUnit,
-  Entities
-} from './interfaces';
+import { adminsegGenders } from './data';
+import { Entities } from './interfaces';
 
 export class Adminseg {
   private _application: any;
