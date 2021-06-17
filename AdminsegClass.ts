@@ -12,16 +12,23 @@ export class Adminseg {
     return this._application;
   }
 
-  homologateCountry(iso3Code: string): AdminsegCountry {
+  get homologationObject(): any {
+    return 50;
+  }
+
+  homologateCountry(): AdminsegCountry {
     const findedCountry = adminsegCountries.find(
-      country => country.code === iso3Code
+      country =>
+        country.code === this.application.personalInfo.location.country.id
     );
     if (!findedCountry) throw new Error('country_not_found');
     return findedCountry;
   }
 
-  homologateGender(id: number): AdminsegGender {
-    const findedGender = adminsegGenders.find(gender => gender.vtioID === id);
+  homologateGender(): AdminsegGender {
+    const findedGender = adminsegGenders.find(
+      gender => gender.vtioID === this.application.personalInfo.gender.id
+    );
     if (!findedGender) throw new Error('gender_not_found');
     return findedGender;
   }
