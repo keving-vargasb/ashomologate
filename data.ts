@@ -2,7 +2,13 @@ import {
   AdminsegCountry,
   AdminsegFrequency,
   AdminsegGender,
-  AdminsegProduct
+  AdminsegHeightUnit,
+  AdminsegIdentityType,
+  AdminsegPersonType,
+  AdminsegPhoneType,
+  AdminsegProduct,
+  AdminsegRelationship,
+  AdminsegWeightUnit
 } from './interfaces';
 
 const adminsegCountries: AdminsegCountry[] = [
@@ -283,9 +289,223 @@ const adminsegFrequencies: AdminsegFrequency[] = [
   }
 ];
 
+const adminsegRelationships: AdminsegRelationship[] = [
+  {
+    value: 39,
+    name: 'Aunt',
+    vtioID: 1
+  },
+  {
+    value: 32,
+    name: 'Boyfriend',
+    vtioID: 2
+  },
+  {
+    value: 25,
+    name: 'Brother',
+    vtioID: 3
+  },
+  {
+    value: 22,
+    name: 'Brother in law',
+    vtioID: 4
+  },
+  {
+    value: 40,
+    name: 'Business Partner',
+    vtioID: 5
+  },
+  {
+    value: 42,
+    name: 'Collateral Assignment',
+    vtioID: 6
+  },
+  {
+    value: 28,
+    name: 'Daughter',
+    vtioID: 7
+  },
+  {
+    value: 41,
+    name: 'Employer',
+    vtioID: 8
+  },
+  {
+    value: 24,
+    name: 'Ex-Spouse',
+    vtioID: 9
+  },
+  {
+    value: 35,
+    name: 'Father',
+    vtioID: 10
+  },
+  {
+    value: 36,
+    name: 'Father in law',
+    vtioID: 11
+  },
+  {
+    value: 20,
+    name: 'Friendship',
+    vtioID: 12
+  },
+  {
+    value: 33,
+    name: 'Girlfriend',
+    vtioID: 13
+  },
+  {
+    value: 31,
+    name: 'Granddaughter',
+    vtioID: 14
+  },
+  {
+    value: 18,
+    name: 'Grandfather',
+    vtioID: 15
+  },
+  {
+    value: 19,
+    name: 'Grandmother',
+    vtioID: 16
+  },
+  {
+    value: 30,
+    name: 'Grandson',
+    vtioID: 17
+  },
+  {
+    value: 29,
+    name: 'Mother',
+    vtioID: 18
+  },
+  {
+    value: 37,
+    name: 'Mother in law',
+    vtioID: 19
+  },
+  {
+    value: 34,
+    name: 'Other',
+    vtioID: 20
+  },
+  {
+    value: 26,
+    name: 'Sister',
+    vtioID: 21
+  },
+  {
+    value: 23,
+    name: 'Sister in law',
+    vtioID: 22
+  },
+  {
+    value: 27,
+    name: 'Son',
+    vtioID: 23
+  },
+  {
+    value: 21,
+    name: 'Spouse',
+    vtioID: 24
+  },
+  {
+    value: 38,
+    name: 'Uncle',
+    vtioID: 25
+  }
+];
+
+const adminsegPhoneTypes: AdminsegPhoneType[] = [
+  {
+    value: 3,
+    name: 'Fax',
+    vtioID: 3
+  },
+  {
+    value: 2,
+    name: 'Home',
+    vtioID: 2
+  },
+  {
+    value: 1,
+    name: 'Mobile',
+    vtioID: 1
+  }
+];
+
+const adminsegIdentityTypes: AdminsegIdentityType[] = [
+  {
+    value: 1,
+    name: 'ID',
+    vtioID: 1
+  },
+  {
+    value: 2,
+    name: 'Passport',
+    vtioID: 2
+  },
+  {
+    value: 3,
+    name: "Owner's ID",
+    vtioID: 3
+  },
+  {
+    value: 4,
+    name: 'Legal Representative',
+    vtioID: 4
+  }
+];
+
+const adminsegPersonTypes: AdminsegPersonType[] = [
+  {
+    value: 'lp',
+    name: 'legal_person',
+    vtioID: 2
+  },
+  {
+    value: 'rp',
+    name: 'real_person',
+    vtioID: 1
+  }
+];
+
+const adminsegHeightUnits: AdminsegHeightUnit[] = [
+  {
+    value: 'M',
+    name: 'Meters',
+    vtioID: 1
+  },
+  {
+    value: 'FT',
+    name: 'Feet and Inch',
+    vtioID: 2
+  }
+];
+
+const adminsegWeightUnits: AdminsegWeightUnit[] = [
+  {
+    value: 'KG',
+    name: 'Kilograms',
+    vtioID: 1
+  },
+  {
+    value: 'LBS',
+    name: 'Pounds',
+    vtioID: 2
+  }
+];
+
 export {
   adminsegCountries,
   adminsegGenders,
   adminsegProducts,
-  adminsegFrequencies
+  adminsegFrequencies,
+  adminsegRelationships,
+  adminsegPhoneTypes,
+  adminsegIdentityTypes,
+  adminsegPersonTypes,
+  adminsegHeightUnits,
+  adminsegWeightUnits
 };

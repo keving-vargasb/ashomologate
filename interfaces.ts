@@ -34,8 +34,32 @@ interface AdminsegRelationship {
   vtioID: number;
 }
 
-interface AdminsegPhoneTypes {
+interface AdminsegPhoneType {
   value: number;
+  name: string;
+  vtioID: number;
+}
+
+interface AdminsegIdentityType {
+  value: number;
+  name: string;
+  vtioID: number;
+}
+
+interface AdminsegPersonType {
+  value: string;
+  name: string;
+  vtioID: number;
+}
+
+interface AdminsegHeightUnit {
+  value: string;
+  name: string;
+  vtioID: number;
+}
+
+interface AdminsegWeightUnit {
+  value: string;
   name: string;
   vtioID: number;
 }
@@ -46,5 +70,9 @@ export {
   AdminsegProduct,
   AdminsegFrequency,
   AdminsegRelationship,
-  AdminsegPhoneTypes
+  AdminsegPhoneType,
+  AdminsegIdentityType,
+  AdminsegPersonType,
+  AdminsegHeightUnit,
+  AdminsegWeightUnit
 };
