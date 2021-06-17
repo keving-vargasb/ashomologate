@@ -1,4 +1,9 @@
-import { AdminsegCountry, AdminsegGender } from './interfaces';
+import {
+  AdminsegCountry,
+  AdminsegFrequency,
+  AdminsegGender,
+  AdminsegProduct
+} from './interfaces';
 
 const adminsegCountries: AdminsegCountry[] = [
   {
@@ -221,4 +226,66 @@ const adminsegGenders: AdminsegGender[] = [
   }
 ];
 
-export { adminsegCountries, adminsegGenders };
+const adminsegProducts: AdminsegProduct[] = [
+  {
+    value: 3,
+    name: 'Easy Term',
+    vtioID: 'p1',
+    plans: [
+      {
+        value: 9,
+        name: 'Easy Term 10',
+        coverage_years: 10
+      },
+      {
+        value: 10,
+        name: 'Easy Term 15',
+        coverage_years: 15
+      },
+      {
+        value: 11,
+        name: 'Easy Term 20',
+        coverage_years: 20
+      },
+      {
+        value: 12,
+        name: 'Easy Term 30',
+        coverage_years: 30
+      }
+    ]
+  }
+];
+
+const adminsegFrequencies: AdminsegFrequency[] = [
+  {
+    value: 10,
+    name: 'Annual',
+    payouts: 1,
+    vtioID: 'ANNUAL'
+  },
+  {
+    value: 15,
+    name: 'Monthly',
+    payouts: 12,
+    vtioID: 'MONTHLY'
+  },
+  {
+    value: 13,
+    name: 'Quarterly',
+    payouts: 4,
+    vtioID: 'QUARTERLY'
+  },
+  {
+    value: 11,
+    name: 'Semiannual',
+    payouts: 2,
+    vtioID: 'SEMMIANNUALLY'
+  }
+];
+
+export {
+  adminsegCountries,
+  adminsegGenders,
+  adminsegProducts,
+  adminsegFrequencies
+};

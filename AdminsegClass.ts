@@ -1,5 +1,15 @@
-import { adminsegCountries, adminsegGenders } from './data';
-import { AdminsegCountry, AdminsegGender } from './interfaces';
+import {
+  adminsegCountries,
+  adminsegFrequencies,
+  adminsegGenders,
+  adminsegProducts
+} from './data';
+import {
+  AdminsegCountry,
+  AdminsegFrequency,
+  AdminsegGender,
+  AdminsegProduct
+} from './interfaces';
 
 export class Adminseg {
   private _application: any;
@@ -13,7 +23,13 @@ export class Adminseg {
   }
 
   get homologationObject(): any {
-    return 50;
+    return {
+      person: {
+        first_name: '',
+        last_name: '',
+        gender: this.homologateGender().value
+      }
+    };
   }
 
   homologateCountry(): AdminsegCountry {
@@ -31,5 +47,22 @@ export class Adminseg {
     );
     if (!findedGender) throw new Error('gender_not_found');
     return findedGender;
+  }
+
+  homologateProduct(): AdminsegProduct {
+    const findedProduct = adminsegProducts.find(
+      product => product.vtioID === this.application.product.id
+    );
+    if (!findedProduct) throw new Error('product_not_found');
+    return findedProduct;
+  }
+
+  homologateFrequency(): AdminsegFrequency {
+    const findedFrequency = adminsegFrequencies.find(
+      frequency =>
+        frequency.vtioID === this.application.selectedPlan.frequency.id
+    );
+    if (!findedFrequency) throw new Error('frequency_not_found');
+    return findedFrequency;
   }
 }
