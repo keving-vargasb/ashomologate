@@ -27,7 +27,7 @@ const applicationExample = {
   personalInfo: {
     age: 55,
     fullName: 'Kevin Vargas',
-    birthdayDate: '2021-01-01 10:00:00',
+    birthdayDate: '2021-01-01',
     gender: {
       id: 1,
       value: 'Male'
@@ -62,11 +62,11 @@ const applicationExample = {
     },
     measures: {
       height: {
-        measurementUnit: 'M',
+        measurementUnit: 1,
         value: 55
       },
       weight: {
-        measurementUnit: 'KG',
+        measurementUnit: 1,
         value: 80
       }
     }
@@ -183,7 +183,7 @@ const applicationExample = {
   },
   questions: [
     {
-      id: 'Q_DRUGS',
+      id: 'Q_SMOKE',
       value: 'Drogas ....',
       type: 'bool',
       response: [

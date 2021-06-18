@@ -70,6 +70,12 @@ interface AdminsegWeightUnit {
   appID: number;
 }
 
+interface AdminsegAgent {
+  value: number;
+  full_name: string;
+  code: string;
+}
+
 export {
   Entities,
   AdminsegGender,
@@ -80,5 +86,6 @@ export {
   AdminsegIdentityType,
   AdminsegPersonType,
   AdminsegHeightUnit,
-  AdminsegWeightUnit
+  AdminsegWeightUnit,
+  AdminsegAgent
 };

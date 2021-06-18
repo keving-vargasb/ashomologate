@@ -1,4 +1,10 @@
-import { adminsegGenders } from './data';
+import {
+  adminsegAgents,
+  adminsegGenders,
+  adminsegHeightUnits,
+  adminsegIdentityTypes,
+  adminsegWeightUnits
+} from './data';
 import { Entities } from './interfaces';
 
 export class Adminseg {
@@ -15,14 +21,59 @@ export class Adminseg {
   get homologationObject(): any {
     return {
       person: {
-        first_name: '',
-        last_name: '',
+        first_name: '', //TODO incomplete
+        last_name: '', //TODO incomplete
         gender: this.findAdminsegItem(
           Entities.gender,
           this.application.personalInfo.gender.id,
           adminsegGenders
-        ).value
-      }
+        ).value,
+        height_unit: this.findAdminsegItem(
+          Entities.heightUnit,
+          this.application.personalInfo.measures.height.measurementUnit,
+          adminsegHeightUnits
+        ).value,
+        height: this.application.personalInfo.measures.height.value,
+        weight_unit: this.findAdminsegItem(
+          Entities.weightUnit,
+          this.application.personalInfo.measures.weight.measurementUnit,
+          adminsegWeightUnits
+        ).value,
+        weight: this.application.personalInfo.measures.weight.value,
+        addresses: [
+          {
+            country: 1, //TODO incomplete
+            complete_address:
+              this.application.personalInfo.address1 +
+              ' ' +
+              this.application.personalInfo.address2
+          }
+        ],
+        birthday: this.application.personalInfo.birthdayDate, //TODO posible formato
+        is_smoker: this.getQuestion('Q_SMOKE').response[0].id,
+        emails: [
+          {
+            value: this.application.user.email
+          }
+        ],
+        phones: [
+          {
+            type: 1, //ID de adminseg para mobile
+            number: this.application.user.phone
+          }
+        ],
+        identifications: [
+          {
+            type: this.findAdminsegItem(
+              Entities.identityType,
+              this.application.personalInfo.indentification.type.id,
+              adminsegIdentityTypes
+            ).value,
+            number: this.application.personalInfo.indentification.number
+          }
+        ]
+      },
+      accept_condition_address: true
     };
   }
 
@@ -37,5 +88,19 @@ export class Adminseg {
 
     if (!findedItem) throw new Error(`${searchEntity}_not_found`);
     return findedItem;
+  }
+
+  findAdminsegAgent(agentCode: string) {
+    const findedAgent = adminsegAgents.find(agent => agent.code === agentCode);
+    if (!findedAgent) throw new Error('agent_not_found');
+    return findedAgent;
+  }
+
+  getQuestion(questionID: string) {
+    const findedQuestion = this.application.questions.find(
+      question => question.id === questionID
+    );
+    if (!findedQuestion) throw new Error('question_not_found');
+    return findedQuestion;
   }
 }
