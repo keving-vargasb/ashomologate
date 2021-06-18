@@ -73,7 +73,23 @@ export class Adminseg {
           }
         ]
       },
-      accept_condition_address: true
+      accept_condition_address: true,
+      beneficiaries: this.application.beneficiaries.map(beneficiary => ({
+        person_type: null,
+        legal_person: {
+          name: null
+        },
+        real_person: {
+          first_name: null,
+          last_name: null,
+          birthday: null
+        },
+        type: null,
+        category: null,
+        percentage: null,
+        reason: null,
+        details: null
+      }))
     };
   }
 
