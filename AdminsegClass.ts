@@ -17,7 +17,7 @@ export class Adminseg {
       person: {
         first_name: '',
         last_name: '',
-        gender: this.findItem(
+        gender: this.findAdminsegItem(
           Entities.gender,
           this.application.personalInfo.gender.id,
           adminsegGenders
@@ -26,12 +26,16 @@ export class Adminseg {
     };
   }
 
-  findItem(entity: Entities, appID: number | string, homologationData: any) {
+  findAdminsegItem(
+    searchEntity: Entities,
+    appID: number | string,
+    homologationData: any
+  ) {
     const findedItem = homologationData.find(
       (item: any) => item.appID === appID
     );
 
-    if (!findedItem) throw new Error(`${entity}_not_found`);
+    if (!findedItem) throw new Error(`${searchEntity}_not_found`);
     return findedItem;
   }
 }
