@@ -213,6 +213,7 @@ export class Adminseg {
     const questions = this.application.questions;
 
     const homologation = questions.map(question => {
+      if (question.id == 'Q_SMOKE') return;
       return this.homologateQuestion(question);
     });
 
@@ -226,16 +227,25 @@ export class Adminseg {
 
     const question = homologation.questions[0];
     const response = appQuestion.response[0];
-    return {
-      question: question.id,
-      choice: question.options[response.id]
-    };
+
+    switch (question.type) {
+      case 'radio':
+        return {
+          question: question.id,
+          choice: question.options[response.id]
+        };
+      case 'bool':
+        return {
+          question: question.id,
+          choice: response.id
+        };
+    }
   }
 }
 
 /*
-    choice
-    answer_bool
+    OK - choice (radio)
+    OK - answer_bool
     answer_text
     checkbox
     answer_age

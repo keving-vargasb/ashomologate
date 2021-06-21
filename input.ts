@@ -218,20 +218,41 @@ const applicationExample = {
   questions: [
     {
       id: 'Q_SMOKE',
-      value: 'Drogas ....',
-      type: 'bool',
       response: [
         {
-          id: '1',
+          id: 1,
           value: 'Yes'
         }
-      ],
-      subQuestion: null
+      ]
     },
     {
+      id: 'Q_ALCOHOL_CONSUMPTION',
+      response: [
+        {
+          id: 0,
+          value: 'Less than 5 drinks per week'
+        }
+      ]
+    },
+    {
+      id: 'Q_MEMBER_FOLLOWING_POSITION',
+      response: [
+        {
+          id: 1,
+          value: 'Yes'
+        }
+      ]
+    }
+  ]
+};
+
+export { applicationExample };
+
+/**
+ * 
+ * 
+ *     {
       id: 'Q_TREATMENT_HOSPITALIZED',
-      value: 'Tratamientos...',
-      type: null,
       response: null,
       subQuestion: [
         {
@@ -246,17 +267,5 @@ const applicationExample = {
           ]
         }
       ]
-    },
-    {
-      id: 'Q_ALCOHOL_CONSUMPTION',
-      response: [
-        {
-          id: 0,
-          value: 'Less than 5 drinks per week'
-        }
-      ]
     }
-  ]
-};
-
-export { applicationExample };
+ */
