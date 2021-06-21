@@ -106,7 +106,8 @@ export class Adminseg {
       payment: {
         transaction_id: this.application.payment.subscriptionId,
         customer_profile_id: this.application.payment.profile.customerProfileId
-      }
+      },
+      answers: this.adminsegQuestions
     };
   }
 
@@ -205,5 +206,27 @@ export class Adminseg {
       state: null, //TODO
       city: null //TODO
     };
+  }
+
+  get adminsegQuestions(): any {
+    const questions = this.application.questions;
+
+    const homologation = questions.map(question => {
+      //obtener el ID
+      /*  
+        "insurances", 
+        "doctors", 
+        "medicines", 
+        "choice", 
+        "answer_bool", 
+        "answer_text", 
+        "answer_age" 
+      */
+
+      return question;
+    });
+
+    console.log(homologation);
+    return homologation;
   }
 }
