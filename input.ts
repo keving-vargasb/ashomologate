@@ -100,12 +100,8 @@ const applicationExample = {
       id: 'beneficiary1',
       order: 1,
       personType: {
-        id: 2,
-        value: 'Legal person'
-      },
-      type: {
         id: 1,
-        value: 'sdsdsd'
+        value: 'Real person'
       },
       birthdayDate: '2021-01-01',
       firstName: 'Kevin Giovany',
