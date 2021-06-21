@@ -1,11 +1,13 @@
 const applicationExample = {
   _id: 'abc123',
+  uuid: 'abc123',
   status: {
     id: 'started',
     value: 'Iniciado'
   },
   agent: {
-    uid: 'agent1'
+    uid: 'agent1',
+    code: 'AMX-341'
   },
   user: {
     uid: 'user1',
@@ -123,6 +125,7 @@ const applicationExample = {
     price: 50,
     term: {
       id: 'T10',
+      years: 10,
       value: '10 Years'
     }
   },
@@ -176,6 +179,41 @@ const applicationExample = {
       }
     ],
     currentlySymptoms: true
+  },
+  payment: {
+    amount: 46.77,
+    createdAt: '2021-04-22T00:34:55.367Z',
+    name: '10 years / monthly',
+    paymentSchedule: {
+      interval: {
+        length: 1,
+        unit: 'months'
+      },
+      startDate: '2021-04-21T00:00:00',
+      totalOccurrences: 9999,
+      trialOccurrences: 0
+    },
+    profile: {
+      customerProfileId: '1518237551',
+      description: 'Profile created by Subscription: 7355069',
+      paymentProfile: {
+        billTo: {
+          firstName: 'Efdfgh',
+          lastName: 'sfdg'
+        },
+        customerPaymentProfileId: '1517362821',
+        customerType: 'individual',
+        payment: {
+          creditCard: {
+            cardNumber: 'XXXX1111',
+            expirationDate: 'XXXX'
+          }
+        }
+      }
+    },
+    status: 'active',
+    subscriptionId: '7355069',
+    trialAmount: 0
   },
   questions: [
     {

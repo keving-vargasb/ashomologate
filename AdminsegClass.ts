@@ -1,10 +1,12 @@
 import {
   adminsegAgents,
   adminsegCountries,
+  adminsegFrequencies,
   adminsegGenders,
   adminsegHeightUnits,
   adminsegIdentityTypes,
   adminsegPersonTypes,
+  adminsegProducts,
   adminsegRelationships,
   adminsegWeightUnits
 } from './data';
@@ -81,7 +83,30 @@ export class Adminseg {
       accept_condition_address: true,
       beneficiaries: this.adminsegBeneficiaries,
       owner_same_insured: this.application.ownerIsTheInsured,
-      owner: this.application.ownerIsTheInsured ? this.adminsegOwner : null
+      owner: this.application.ownerIsTheInsured ? this.adminsegOwner : null,
+      accept_terms: true,
+      date_accept_terms: this.application.legal.acceptTermsDate, //TODO posible formato
+      recurring_payment: true,
+      quotation: {
+        uuid: this.application.uuid,
+        agent: this.findAdminsegAgent(this.application.agent.code).value,
+        product: this.findAdminsegItem(
+          Entities.product,
+          this.application.product.id,
+          adminsegProducts
+        ).value,
+        insured_value: this.application.insuredValue,
+        years: this.application.selectedPlan.term.years,
+        frequency: this.findAdminsegItem(
+          Entities.frequency,
+          this.application.selectedPlan.frequency.id,
+          adminsegFrequencies
+        ).value
+      },
+      payment: {
+        transaction_id: this.application.payment.subscriptionId,
+        customer_profile_id: this.application.payment.profile.customerProfileId
+      }
     };
   }
 
