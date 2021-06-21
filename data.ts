@@ -12,6 +12,17 @@ import {
   AdminsegWeightUnit
 } from './interfaces';
 
+const q = {
+  Q_TREATMENT_HOSPITALIZED: {
+    questions: [
+      {
+        id: 400,
+        type: '25'
+      }
+    ]
+  }
+}
+
 const adminsegGenders: AdminsegGender[] = [
   {
     value: 4,

@@ -57,7 +57,7 @@ export class Adminseg {
           }
         ],
         birthday: this.application.personalInfo.birthdayDate, //TODO posible formato
-        is_smoker: this.getQuestion('Q_SMOKE').response[0].id,
+        is_smoker: this.getAppQuestion('Q_SMOKE').response[0].id,
         emails: [
           {
             value: this.application.user.email
@@ -138,7 +138,7 @@ export class Adminseg {
     return findedAgent;
   }
 
-  getQuestion(questionID: string) {
+  getAppQuestion(questionID: string) {
     const findedQuestion = this.application.questions.find(
       question => question.id === questionID
     );
