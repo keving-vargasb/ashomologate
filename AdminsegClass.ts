@@ -5,6 +5,7 @@ import {
   adminsegHeightUnits,
   adminsegIdentityTypes,
   adminsegPersonTypes,
+  adminsegRelationships,
   adminsegWeightUnits
 } from './data';
 import { Entities } from './interfaces';
@@ -138,9 +139,13 @@ export class Adminseg {
           last_name: personType === 'rp' ? beneficiary.lastName : null,
           birthday: personType === 'rp' ? beneficiary.birthdayDate : null //Posible formato
         },
-        type: null,
-        category: null,
-        percentage: null,
+        type: null, //No tenemos el valor satelite
+        category: this.findAdminsegItem(
+          Entities.relationship,
+          beneficiary.relationship.id,
+          adminsegRelationships
+        ).value,
+        percentage: beneficiary.percent,
         reason: null,
         details: null
       };

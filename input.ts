@@ -112,7 +112,7 @@ const applicationExample = {
       lastName: 'Vargas Benavides',
       percent: 100,
       relationship: {
-        id: 27,
+        id: 3,
         value: 'Son'
       }
     }
