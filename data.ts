@@ -19,11 +19,56 @@ const homolgationQuestions = {
         id: 484,
         type: 'radio',
         options: {
-          1: 0,
-          2: 1,
-          3: 2,
-          4: 3
+          0: 0,
+          1: 1,
+          2: 2,
+          3: 3
         }
+      }
+    ]
+  },
+  Q_MEMBER_FOLLOWING_POSITION: {
+    questions: [
+      {
+        id: 404,
+        type: 'bool',
+        options: null
+      }
+    ]
+  },
+  Q_CURRENTLY_COVERAGE: {
+    questions: [
+      {
+        id: 492,
+        type: 'bool',
+        options: null
+      },
+      {
+        id: 491,
+        type: 'insurance',
+        options: null
+      }
+    ]
+  },
+  Q_INSURANCE_POLICY_DENIED: {
+    questions: [
+      {
+        id: 478,
+        type: 'bool',
+        option: null
+      },
+      {
+        id: 479,
+        type: 'radio',
+        option: {
+          0: 0,
+          1: 1
+        }
+      },
+      {
+        id: 487,
+        type: 'text',
+        option: null
       }
     ]
   }

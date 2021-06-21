@@ -8,7 +8,8 @@ import {
   adminsegPersonTypes,
   adminsegProducts,
   adminsegRelationships,
-  adminsegWeightUnits
+  adminsegWeightUnits,
+  homolgationQuestions
 } from './data';
 import { Entities } from './interfaces';
 
@@ -212,18 +213,8 @@ export class Adminseg {
     const questions = this.application.questions;
 
     const homologation = questions.map(question => {
-      //obtener el ID
-      /*  
-        "insurances", 
-        "doctors", 
-        "medicines", 
-        "choice", 
-        "answer_bool", 
-        "answer_text", 
-        "answer_age" 
-      */
-
-      return question;
+      const findedQuestion = homolgationQuestions[question.id];
+      return findedQuestion;
     });
 
     console.log(homologation);
