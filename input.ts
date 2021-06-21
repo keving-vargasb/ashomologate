@@ -246,6 +246,15 @@ const applicationExample = {
           ]
         }
       ]
+    },
+    {
+      id: 'Q_ALCOHOL_CONSUMPTION',
+      response: [
+        {
+          id: 0,
+          value: 'Less than 5 drinks per week'
+        }
+      ]
     }
   ]
 };

@@ -213,11 +213,34 @@ export class Adminseg {
     const questions = this.application.questions;
 
     const homologation = questions.map(question => {
-      const findedQuestion = homolgationQuestions[question.id];
-      return findedQuestion;
+      return this.homologateQuestion(question);
     });
 
-    console.log(homologation);
+    console.log({ homologation });
     return homologation;
   }
+
+  homologateQuestion(appQuestion): any {
+    const homologation = homolgationQuestions[appQuestion.id];
+    if (!homologation) return null;
+
+    const question = homologation.questions[0];
+    const response = appQuestion.response[0];
+    return {
+      question: question.id,
+      choice: question.options[response.id]
+    };
+  }
 }
+
+/*
+    choice
+    answer_bool
+    answer_text
+    checkbox
+    answer_age
+    insurances
+    doctors
+    medicines
+    
+    */
