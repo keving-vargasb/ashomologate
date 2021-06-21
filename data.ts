@@ -12,16 +12,22 @@ import {
   AdminsegWeightUnit
 } from './interfaces';
 
-const q = {
-  Q_TREATMENT_HOSPITALIZED: {
+const homolgationQuestions = {
+  Q_ALCOHOL_CONSUMPTION: {
     questions: [
       {
-        id: 400,
-        type: '25'
+        id: 484,
+        type: 'radio',
+        options: {
+          1: 0,
+          2: 1,
+          3: 2,
+          4: 3
+        }
       }
     ]
   }
-}
+};
 
 const adminsegGenders: AdminsegGender[] = [
   {
@@ -4154,5 +4160,6 @@ export {
   adminsegHeightUnits,
   adminsegWeightUnits,
   adminsegAgents,
-  adminsegCountries
+  adminsegCountries,
+  homolgationQuestions
 };
