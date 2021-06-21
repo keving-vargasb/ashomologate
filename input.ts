@@ -78,7 +78,7 @@ const applicationExample = {
       value: 'Bogotá'
     },
     country: {
-      id: 'CO',
+      id: 'COL',
       value: 'Colombia'
     },
     fullName: 'Kevin Vargas',
@@ -91,7 +91,7 @@ const applicationExample = {
     },
     jointOwner: 'wtf',
     relationship: {
-      id: 27,
+      id: 25,
       value: 'Son'
     }
   },

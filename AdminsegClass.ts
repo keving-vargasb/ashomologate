@@ -79,7 +79,9 @@ export class Adminseg {
         ]
       },
       accept_condition_address: true,
-      beneficiaries: this.adminsegBeneficiaries
+      beneficiaries: this.adminsegBeneficiaries,
+      owner_same_insured: this.application.ownerIsTheInsured,
+      owner: this.application.ownerIsTheInsured ? this.adminsegOwner : null
     };
   }
 
@@ -137,9 +139,9 @@ export class Adminseg {
         real_person: {
           first_name: personType === 'rp' ? beneficiary.firstName : null,
           last_name: personType === 'rp' ? beneficiary.lastName : null,
-          birthday: personType === 'rp' ? beneficiary.birthdayDate : null //Posible formato
+          birthday: personType === 'rp' ? beneficiary.birthdayDate : null //TODO Posible formato
         },
-        type: null, //No tenemos el valor satelite
+        type: null, //TODO No tenemos el valor satelite
         category: this.findAdminsegItem(
           Entities.relationship,
           beneficiary.relationship.id,
@@ -150,5 +152,33 @@ export class Adminseg {
         details: null
       };
     });
+  }
+
+  get adminsegOwner(): any {
+    const owner = this.application.owner;
+
+    return {
+      name: owner.fullName,
+      relationship: this.findAdminsegItem(
+        Entities.relationship,
+        owner.relationship.id,
+        adminsegRelationships
+      ).value,
+      identity: [
+        {
+          type: this.findAdminsegItem(
+            Entities.identityType,
+            owner.indentification.type.id,
+            adminsegIdentityTypes
+          ).value,
+          number: owner.indentification.number
+        }
+      ],
+      co_owner: null, //TODO no sé a que hace referencia "jointOwner"
+      address: owner.address,
+      country: this.findAdminsegCountry(owner.country.id).value,
+      state: null, //TODO
+      city: null //TODO
+    };
   }
 }
