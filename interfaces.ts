@@ -76,6 +76,12 @@ interface AdminsegAgent {
   code: string;
 }
 
+interface AdminsegCountry {
+  value: number;
+  name: string;
+  code: string;
+}
+
 export {
   Entities,
   AdminsegGender,
@@ -87,5 +93,6 @@ export {
   AdminsegPersonType,
   AdminsegHeightUnit,
   AdminsegWeightUnit,
-  AdminsegAgent
+  AdminsegAgent,
+  AdminsegCountry
 };

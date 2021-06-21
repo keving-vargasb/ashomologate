@@ -58,7 +58,7 @@ export class Adminseg {
         ],
         phones: [
           {
-            type: 1, //ID de adminseg para mobile
+            type: 1,
             number: this.application.user.phone
           }
         ],
