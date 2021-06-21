@@ -34,7 +34,7 @@ const applicationExample = {
     },
     location: {
       country: {
-        id: 'CO',
+        id: 'COL',
         value: 'Colombia'
       },
       city: {
@@ -100,7 +100,7 @@ const applicationExample = {
       id: 'beneficiary1',
       order: 1,
       personType: {
-        id: 'lp',
+        id: 2,
         value: 'Legal person'
       },
       type: {

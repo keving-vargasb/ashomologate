@@ -1,8 +1,10 @@
 import {
   adminsegAgents,
+  adminsegCountries,
   adminsegGenders,
   adminsegHeightUnits,
   adminsegIdentityTypes,
+  adminsegPersonTypes,
   adminsegWeightUnits
 } from './data';
 import { Entities } from './interfaces';
@@ -42,7 +44,9 @@ export class Adminseg {
         weight: this.application.personalInfo.measures.weight.value,
         addresses: [
           {
-            country: 1, //TODO incomplete
+            country: this.findAdminsegCountry(
+              this.application.personalInfo.location.country.id
+            ).value,
             complete_address:
               this.application.personalInfo.address1 +
               ' ' +
@@ -74,22 +78,7 @@ export class Adminseg {
         ]
       },
       accept_condition_address: true,
-      beneficiaries: this.application.beneficiaries.map(beneficiary => ({
-        person_type: null,
-        legal_person: {
-          name: null
-        },
-        real_person: {
-          first_name: null,
-          last_name: null,
-          birthday: null
-        },
-        type: null,
-        category: null,
-        percentage: null,
-        reason: null,
-        details: null
-      }))
+      beneficiaries: this.adminsegBeneficiaries
     };
   }
 
@@ -106,6 +95,14 @@ export class Adminseg {
     return findedItem;
   }
 
+  findAdminsegCountry(appID: string) {
+    const findedCountry = adminsegCountries.find(
+      country => country.code === appID
+    );
+    if (!findedCountry) throw new Error('country_not_found');
+    return findedCountry;
+  }
+
   findAdminsegAgent(agentCode: string) {
     const findedAgent = adminsegAgents.find(agent => agent.code === agentCode);
     if (!findedAgent) throw new Error('agent_not_found');
@@ -118,5 +115,35 @@ export class Adminseg {
     );
     if (!findedQuestion) throw new Error('question_not_found');
     return findedQuestion;
+  }
+
+  get adminsegBeneficiaries(): any {
+    return this.application.beneficiaries.map(beneficiary => {
+      const personType = this.findAdminsegItem(
+        Entities.personType,
+        beneficiary.personType.id,
+        adminsegPersonTypes
+      ).value;
+
+      return {
+        person_type: personType,
+        legal_person: {
+          name:
+            personType === 'lp'
+              ? `${beneficiary.firstName} ${beneficiary.last_name}`
+              : null
+        },
+        real_person: {
+          first_name: personType === 'rp' ? beneficiary.firstName : null,
+          last_name: personType === 'rp' ? beneficiary.lastName : null,
+          birthday: personType === 'rp' ? beneficiary.birthdayDate : null //Posible formato
+        },
+        type: null,
+        category: null,
+        percentage: null,
+        reason: null,
+        details: null
+      };
+    });
   }
 }
