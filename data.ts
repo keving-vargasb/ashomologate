@@ -197,6 +197,135 @@ const homolgationQuestions = {
         option: null
       }
     ]
+  },
+  Q_SOME_DISEASE_1: {
+    questions: [
+      {
+        id: 429,
+        type: 'bool',
+        option: null
+      }
+    ]
+  },
+  Q_SOME_DISEASE_2: {
+    questions: [
+      {
+        id: 430,
+        type: 'bool',
+        option: null
+      }
+    ]
+  },
+  Q_SOME_DISEASE_3: {
+    questions: [
+      {
+        id: 431,
+        type: 'bool',
+        option: null
+      }
+    ]
+  },
+  Q_SOME_DISEASE_4: {
+    questions: [
+      {
+        id: 432,
+        type: 'bool',
+        option: null
+      }
+    ]
+  },
+  Q_SOME_DISEASE_5: {
+    questions: [
+      {
+        id: 433,
+        type: 'bool',
+        option: null
+      }
+    ]
+  },
+  Q_SOME_DISEASE_6: {
+    questions: [
+      {
+        id: 434,
+        type: 'bool',
+        option: null
+      }
+    ]
+  },
+  Q_SOME_DISEASE_7: {
+    questions: [
+      {
+        id: 435,
+        type: 'bool',
+        option: null
+      }
+    ]
+  },
+  Q_SOME_DISEASE_8: {
+    questions: [
+      {
+        id: 436,
+        type: 'bool',
+        option: null
+      }
+    ]
+  },
+  Q_SOME_DISEASE_9: {
+    questions: [
+      {
+        id: 437,
+        type: 'bool',
+        option: null
+      }
+    ]
+  },
+  Q_SOME_DISEASE_10: {
+    questions: [
+      {
+        id: 438,
+        type: 'bool',
+        option: null
+      }
+    ]
+  },
+  Q_BLOOD_PRESSURE_MULTIPLE_1: {
+    questions: [
+      {
+        id: 440,
+        type: 'age',
+        option: null
+      }
+    ]
+  },
+  Q_BLOOD_PRESSURE_MULTIPLE_2: {
+    questions: [
+      {
+        id: 441,
+        type: 'select',
+        options: {
+          0: 0,
+          1: 1,
+          2: 2,
+          3: 3,
+          4: 4
+        }
+      }
+    ]
+  },
+  Q_BLOOD_PRESSURE_MULTIPLE_3: {
+    questions: [
+      {
+        id: 442,
+        type: 'select',
+        options: {
+          0: 0,
+          1: 1,
+          2: 2,
+          3: 3,
+          4: 4
+        }
+      }
+    ]
   }
 };
 

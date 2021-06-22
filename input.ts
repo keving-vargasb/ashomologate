@@ -225,7 +225,7 @@ const applicationExample = {
         }
       ]
     },
-    {
+    /*    {
       id: 'Q_ALCOHOL_CONSUMPTION',
       type: 'radio',
       response: [
@@ -388,6 +388,159 @@ const applicationExample = {
             {
               id: 1,
               value: 'Yes'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: 'Q_SOME_DISEASE',
+      value: 'Tratamientos...',
+      type: null,
+      response: null,
+      subQuestion: [
+        {
+          id: 'Q_SOME_DISEASE_1',
+          type: 'bool',
+          value: 'Cancer, tumor, leukemia, lymphoma, malignant lesion?',
+          response: [
+            {
+              id: 1,
+              value: 'Yes'
+            }
+          ]
+        },
+        {
+          id: 'Q_SOME_DISEASE_2',
+          type: 'bool',
+          value: 'Cancer, tumor, leukemia, lymphoma, malignant lesion?',
+          response: [
+            {
+              id: 1,
+              value: 'Yes'
+            }
+          ]
+        },
+        {
+          id: 'Q_SOME_DISEASE_3',
+          type: 'bool',
+          value: 'Cancer, tumor, leukemia, lymphoma, malignant lesion?',
+          response: [
+            {
+              id: 1,
+              value: 'Yes'
+            }
+          ]
+        },
+        {
+          id: 'Q_SOME_DISEASE_4',
+          type: 'bool',
+          value: 'Cancer, tumor, leukemia, lymphoma, malignant lesion?',
+          response: [
+            {
+              id: 1,
+              value: 'Yes'
+            }
+          ]
+        },
+        {
+          id: 'Q_SOME_DISEASE_1',
+          type: 'bool',
+          value: 'Cancer, tumor, leukemia, lymphoma, malignant lesion?',
+          response: [
+            {
+              id: 1,
+              value: 'Yes'
+            }
+          ]
+        },
+        {
+          id: 'Q_SOME_DISEASE_5',
+          type: 'bool',
+          value: 'Cancer, tumor, leukemia, lymphoma, malignant lesion?',
+          response: [
+            {
+              id: 1,
+              value: 'Yes'
+            }
+          ]
+        },
+        {
+          id: 'Q_SOME_DISEASE_1',
+          type: 'bool',
+          value: 'Cancer, tumor, leukemia, lymphoma, malignant lesion?',
+          response: [
+            {
+              id: 1,
+              value: 'Yes'
+            }
+          ]
+        },
+        {
+          id: 'Q_SOME_DISEASE_6',
+          type: 'bool',
+          value: 'Cancer, tumor, leukemia, lymphoma, malignant lesion?',
+          response: [
+            {
+              id: 1,
+              value: 'Yes'
+            }
+          ]
+        },
+        {
+          id: 'Q_SOME_DISEASE_7',
+          type: 'bool',
+          value: 'Cancer, tumor, leukemia, lymphoma, malignant lesion?',
+          response: [
+            {
+              id: 1,
+              value: 'Yes'
+            }
+          ]
+        },
+        {
+          id: 'Q_SOME_DISEASE_8',
+          type: 'bool',
+          value: 'Cancer, tumor, leukemia, lymphoma, malignant lesion?',
+          response: [
+            {
+              id: 1,
+              value: 'Yes'
+            }
+          ]
+        }
+      ]
+    }*/
+    {
+      id: 'Q_BLOOD_PRESSURE_MULTIPLE',
+      value: 'Tratamientos...',
+      type: null,
+      response: null,
+      subQuestion: [
+        {
+          id: 'Q_BLOOD_PRESSURE_MULTIPLE_1',
+          response: [
+            {
+              id: null,
+              value: '25'
+            }
+          ]
+        },
+        {
+          id: 'Q_BLOOD_PRESSURE_MULTIPLE_2',
+          response: [
+            {
+              id: 1,
+              value: 'a'
+            }
+          ]
+        },
+        {
+          id: 'Q_BLOOD_PRESSURE_MULTIPLE_3',
+          response: [
+            {
+              id: 1,
+              value: 'ffgfg'
             }
           ]
         }

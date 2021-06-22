@@ -211,7 +211,6 @@ export class Adminseg {
 
   get adminsegQuestions(): any {
     const questions = this.organizeQuestions();
-
     const questionsFiltered = questions.filter(
       question => question.id != 'Q_SMOKE' && question.id != 'Q_GENDER'
     );
@@ -222,7 +221,7 @@ export class Adminseg {
       const newArray = homologation.concat(this.homologateQuestion(question));
       homologation = newArray;
     }
-    console.log(homologation);
+    console.log({ homologation });
     return homologation;
   }
 
@@ -269,6 +268,11 @@ export class Adminseg {
           question: homologationQuestionObject.id,
           choice: homologationQuestionObject.options[response.id]
         };
+      case 'select':
+        return {
+          question: homologationQuestionObject.id,
+          choice: homologationQuestionObject.options[response.id]
+        };
       case 'bool':
         return {
           question: homologationQuestionObject.id,
@@ -290,18 +294,22 @@ export class Adminseg {
           question: homologationQuestionObject.id,
           answer_text: response.value
         };
+      case 'age':
+        return {
+          question: homologationQuestionObject.id,
+          answer_age: parseInt(response.value)
+        };
     }
   }
 }
 
 /*
-    OK - choice (radio)
+    OK - choice (radio, select)
     OK - answer_bool
     OK - answer_text
+    OK - insurances
+    OK - answer_age
     checkbox
-    answer_age
-    PENDING - insurances
     doctors
-    medicines
-    
-    */
+    medicines    
+*/
