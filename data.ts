@@ -326,6 +326,22 @@ const homolgationQuestions = {
         }
       }
     ]
+  },
+  Q_ABNORMAL_RESULTS: {
+    questions: [
+      {
+        id: 443,
+        type: 'checkbox',
+        options: {
+          0: 0,
+          1: 1,
+          2: 2,
+          3: 3,
+          4: 4,
+          5: 5
+        }
+      }
+    ]
   }
 };
 

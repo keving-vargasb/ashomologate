@@ -250,10 +250,12 @@ export class Adminseg {
 
     for (let i = 0; i < homologation.questions.length; i++) {
       const homologationQuestionObject = homologation.questions[i];
-      const response = appQuestion.response[i];
-
+      //const response = appQuestion.response[i];
       result.push(
-        this.manageSingleQuestion(homologationQuestionObject, response)
+        this.manageSingleQuestion(
+          homologationQuestionObject,
+          appQuestion.response
+        )
       );
     }
 
@@ -266,17 +268,17 @@ export class Adminseg {
       case 'radio':
         return {
           question: homologationQuestionObject.id,
-          choice: homologationQuestionObject.options[response.id]
+          choice: homologationQuestionObject.options[response[0].id]
         };
       case 'select':
         return {
           question: homologationQuestionObject.id,
-          choice: homologationQuestionObject.options[response.id]
+          choice: homologationQuestionObject.options[response[0].id]
         };
       case 'bool':
         return {
           question: homologationQuestionObject.id,
-          answer_bool: response.id == 1 ? true : false
+          answer_bool: response[0].id == 1 ? true : false
         };
       case 'insurances':
         const insurances = this.application.insurances.acquired.map(
@@ -292,12 +294,17 @@ export class Adminseg {
       case 'text':
         return {
           question: homologationQuestionObject.id,
-          answer_text: response.value
+          answer_text: response[0].value
         };
       case 'age':
         return {
           question: homologationQuestionObject.id,
-          answer_age: parseInt(response.value)
+          answer_age: parseInt(response[0].value)
+        };
+      case 'checkbox':
+        return {
+          question: homologationQuestionObject.id,
+          checkbox: response.map(answer => answer.id)
         };
     }
   }

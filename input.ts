@@ -225,7 +225,7 @@ const applicationExample = {
         }
       ]
     },
-    /*    {
+    {
       id: 'Q_ALCOHOL_CONSUMPTION',
       type: 'radio',
       response: [
@@ -510,7 +510,7 @@ const applicationExample = {
           ]
         }
       ]
-    }*/
+    },
     {
       id: 'Q_BLOOD_PRESSURE_MULTIPLE',
       value: 'Tratamientos...',
@@ -543,6 +543,19 @@ const applicationExample = {
               value: 'ffgfg'
             }
           ]
+        }
+      ]
+    },
+    {
+      id: 'Q_ABNORMAL_RESULTS',
+      response: [
+        {
+          id: 0,
+          value: 'Less than 5 drinks per week'
+        },
+        {
+          id: 1,
+          value: 'Less than 5 drinks per week'
         }
       ]
     }
