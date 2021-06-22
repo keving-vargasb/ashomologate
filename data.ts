@@ -547,6 +547,69 @@ const homolgationQuestions = {
         options: null
       }
     ]
+  },
+  Q_ADMITTED_HOSPITAL: {
+    questions: [
+      {
+        id: 420,
+        type: 'bool',
+        options: null
+      }
+    ]
+  },
+  Q_SOME_DISEASE_PAST_DAYS: {
+    questions: [
+      {
+        id: 506,
+        type: 'bool',
+        options: null
+      }
+    ]
+  },
+  Q_AWAITING_RESULT_COVID_TEST: {
+    questions: [
+      {
+        id: 503,
+        type: 'bool',
+        options: null
+      }
+    ]
+  },
+  HAVE_CONTACT_SOMEONE_COVID_CONTAGED: {
+    questions: [
+      {
+        id: 504,
+        type: 'bool',
+        options: null
+      }
+    ]
+  },
+  Q_TAKE_MEDICATION_1: {
+    questions: [
+      {
+        id: 427,
+        type: 'bool',
+        options: null
+      }
+    ]
+  },
+  Q_TAKE_MEDICATION_2: {
+    questions: [
+      {
+        id: 425,
+        type: 'medicine',
+        options: null
+      }
+    ]
+  },
+  Q_DOSAGE_CHANGED: {
+    questions: [
+      {
+        id: 485,
+        type: 'bool',
+        options: null
+      }
+    ]
   }
 };
 

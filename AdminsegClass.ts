@@ -316,6 +316,15 @@ export class Adminseg {
         return {
           doctors
         };
+      case 'medicine':
+        const medicines = this.application.medicines.map(medicine => ({
+          name: medicine.name,
+          dosage: medicine.dosage,
+          condition: medicine.condition
+        }));
+        return {
+          medicines
+        };
     }
   }
 }
