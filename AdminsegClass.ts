@@ -211,9 +211,6 @@ export class Adminseg {
 
   get adminsegQuestions(): any {
     const questions = this.organizeQuestions();
-    console.log(questions);
-    /* const questions = this.application.questions;
-    //console.log({ questions });
 
     const questionsFiltered = questions.filter(
       question => question.id != 'Q_SMOKE' && question.id != 'Q_GENDER'
@@ -226,8 +223,7 @@ export class Adminseg {
       homologation = newArray;
     }
     console.log(homologation);
-    return homologation; */
-    return null;
+    return homologation;
   }
 
   organizeQuestions(): any {
@@ -286,7 +282,9 @@ export class Adminseg {
             effective_date: insurance.effectiveDate //TODO posible formato
           })
         );
-        return insurances;
+        return {
+          insurances
+        };
       case 'text':
         return {
           question: homologationQuestionObject.id,

@@ -98,6 +98,105 @@ const homolgationQuestions = {
         option: null
       }
     ]
+  },
+  Q_TREATMENT_HOSPITALIZED_2: {
+    questions: [
+      {
+        id: 409,
+        type: 'bool',
+        option: null
+      }
+    ]
+  },
+  Q_TREATMENT_HOSPITALIZED_3: {
+    questions: [
+      {
+        id: 410,
+        type: 'bool',
+        option: null
+      }
+    ]
+  },
+  Q_TREATMENT_HOSPITALIZED_4: {
+    questions: [
+      {
+        id: 411,
+        type: 'bool',
+        option: null
+      }
+    ]
+  },
+  Q_TREATMENT_HOSPITALIZED_5: {
+    questions: [
+      {
+        id: 412,
+        type: 'bool',
+        option: null
+      }
+    ]
+  },
+  Q_TREATMENT_HOSPITALIZED_6: {
+    questions: [
+      {
+        id: 413,
+        type: 'bool',
+        option: null
+      }
+    ]
+  },
+  Q_TREATMENT_HOSPITALIZED_7: {
+    questions: [
+      {
+        id: 414,
+        type: 'bool',
+        option: null
+      }
+    ]
+  },
+  Q_TREATMENT_HOSPITALIZED_8: {
+    questions: [
+      {
+        id: 415,
+        type: 'bool',
+        option: null
+      }
+    ]
+  },
+  Q_TREATMENT_HOSPITALIZED_9: {
+    questions: [
+      {
+        id: 481,
+        type: 'bool',
+        option: null
+      }
+    ]
+  },
+  Q_TREATMENT_HOSPITALIZED_10: {
+    questions: [
+      {
+        id: 416,
+        type: 'bool',
+        option: null
+      }
+    ]
+  },
+  Q_TREATMENT_HOSPITALIZED_11: {
+    questions: [
+      {
+        id: 417,
+        type: 'bool',
+        option: null
+      }
+    ]
+  },
+  Q_TREATMENT_HOSPITALIZED_12: {
+    questions: [
+      {
+        id: 418,
+        type: 'bool',
+        option: null
+      }
+    ]
   }
 };
 

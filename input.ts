@@ -225,9 +225,8 @@ const applicationExample = {
         }
       ]
     },
-    /*   {
+    {
       id: 'Q_ALCOHOL_CONSUMPTION',
-      adminsegId: 484,
       type: 'radio',
       response: [
         {
@@ -253,17 +252,136 @@ const applicationExample = {
           value: 'Yes'
         }
       ]
-    }, */
+    },
     {
       id: 'Q_TREATMENT_HOSPITALIZED',
-      adminsegId: 407,
       value: 'Tratamientos...',
       type: null,
       response: null,
       subQuestion: [
         {
           id: 'Q_TREATMENT_HOSPITALIZED_1',
-          adminsegId: 408,
+          type: 'bool',
+          value: 'Cancer, tumor, leukemia, lymphoma, malignant lesion?',
+          response: [
+            {
+              id: 1,
+              value: 'Yes'
+            }
+          ]
+        },
+        {
+          id: 'Q_TREATMENT_HOSPITALIZED_2',
+          type: 'bool',
+          value: 'Cancer, tumor, leukemia, lymphoma, malignant lesion?',
+          response: [
+            {
+              id: 1,
+              value: 'Yes'
+            }
+          ]
+        },
+        {
+          id: 'Q_TREATMENT_HOSPITALIZED_3',
+          type: 'bool',
+          value: 'Cancer, tumor, leukemia, lymphoma, malignant lesion?',
+          response: [
+            {
+              id: 1,
+              value: 'Yes'
+            }
+          ]
+        },
+        {
+          id: 'Q_TREATMENT_HOSPITALIZED_4',
+          type: 'bool',
+          value: 'Cancer, tumor, leukemia, lymphoma, malignant lesion?',
+          response: [
+            {
+              id: 1,
+              value: 'Yes'
+            }
+          ]
+        },
+        {
+          id: 'Q_TREATMENT_HOSPITALIZED_5',
+          type: 'bool',
+          value: 'Cancer, tumor, leukemia, lymphoma, malignant lesion?',
+          response: [
+            {
+              id: 1,
+              value: 'Yes'
+            }
+          ]
+        },
+        {
+          id: 'Q_TREATMENT_HOSPITALIZED_6',
+          type: 'bool',
+          value: 'Cancer, tumor, leukemia, lymphoma, malignant lesion?',
+          response: [
+            {
+              id: 1,
+              value: 'Yes'
+            }
+          ]
+        },
+        {
+          id: 'Q_TREATMENT_HOSPITALIZED_7',
+          type: 'bool',
+          value: 'Cancer, tumor, leukemia, lymphoma, malignant lesion?',
+          response: [
+            {
+              id: 1,
+              value: 'Yes'
+            }
+          ]
+        },
+        {
+          id: 'Q_TREATMENT_HOSPITALIZED_8',
+          type: 'bool',
+          value: 'Cancer, tumor, leukemia, lymphoma, malignant lesion?',
+          response: [
+            {
+              id: 1,
+              value: 'Yes'
+            }
+          ]
+        },
+        {
+          id: 'Q_TREATMENT_HOSPITALIZED_9',
+          type: 'bool',
+          value: 'Cancer, tumor, leukemia, lymphoma, malignant lesion?',
+          response: [
+            {
+              id: 1,
+              value: 'Yes'
+            }
+          ]
+        },
+        {
+          id: 'Q_TREATMENT_HOSPITALIZED_10',
+          type: 'bool',
+          value: 'Cancer, tumor, leukemia, lymphoma, malignant lesion?',
+          response: [
+            {
+              id: 1,
+              value: 'Yes'
+            }
+          ]
+        },
+        {
+          id: 'Q_TREATMENT_HOSPITALIZED_11',
+          type: 'bool',
+          value: 'Cancer, tumor, leukemia, lymphoma, malignant lesion?',
+          response: [
+            {
+              id: 1,
+              value: 'Yes'
+            }
+          ]
+        },
+        {
+          id: 'Q_TREATMENT_HOSPITALIZED_12',
           type: 'bool',
           value: 'Cancer, tumor, leukemia, lymphoma, malignant lesion?',
           response: [
@@ -279,25 +397,3 @@ const applicationExample = {
 };
 
 export { applicationExample };
-
-/**
- * 
- * 
- *     {
-      id: 'Q_TREATMENT_HOSPITALIZED',
-      response: null,
-      subQuestion: [
-        {
-          id: 'Q_TREATMENT_HOSPITALIZED_1',
-          value: 'Cancer, tumor, leukemia, lymphoma, malignant lesion?',
-          type: 'bool',
-          response: [
-            {
-              id: '1',
-              value: 'Yes'
-            }
-          ]
-        }
-      ]
-    }
- */
