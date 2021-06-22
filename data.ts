@@ -460,6 +460,22 @@ const homolgationQuestions = {
         }
       }
     ]
+  },
+  Q_COMPLICATIONS_DIABETES: {
+    questions: [
+      {
+        id: 451,
+        type: 'radio',
+        options: {
+          0: 0,
+          1: 1,
+          2: 2,
+          3: 3,
+          4: 4,
+          5: 5
+        }
+      }
+    ]
   }
 };
 
