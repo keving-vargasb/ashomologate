@@ -525,6 +525,28 @@ const homolgationQuestions = {
         }
       }
     ]
+  },
+  Q_RESULTS_TREATMENT: {
+    questions: [
+      {
+        id: 459,
+        type: 'radio',
+        options: {
+          0: 0,
+          1: 1,
+          2: 2
+        }
+      }
+    ]
+  },
+  Q_HEALTHCARE_PROVIDER: {
+    questions: [
+      {
+        id: 486,
+        type: 'doctor',
+        options: null
+      }
+    ]
   }
 };
 

@@ -280,17 +280,6 @@ export class Adminseg {
           question: homologationQuestionObject.id,
           answer_bool: response[0].id == 1 ? true : false
         };
-      case 'insurances':
-        const insurances = this.application.insurances.acquired.map(
-          insurance => ({
-            company_name: insurance.companyName,
-            member_id: insurance.memberId,
-            effective_date: insurance.effectiveDate //TODO posible formato
-          })
-        );
-        return {
-          insurances
-        };
       case 'text':
         return {
           question: homologationQuestionObject.id,
@@ -306,17 +295,27 @@ export class Adminseg {
           question: homologationQuestionObject.id,
           checkbox: response.map(answer => answer.id)
         };
+      case 'insurances':
+        const insurances = this.application.insurances.acquired.map(
+          insurance => ({
+            company_name: insurance.companyName,
+            member_id: insurance.memberId,
+            effective_date: insurance.effectiveDate //TODO posible formato
+          })
+        );
+        return {
+          insurances
+        };
+      case 'doctor':
+        const doctors = this.application.doctors.map(doctor => ({
+          name: doctor.name,
+          address: doctor.email,
+          phone: doctor.phone,
+          condition: doctor.conditionTreated
+        }));
+        return {
+          doctors
+        };
     }
   }
 }
-
-/*
-    OK - choice (radio, select)
-    OK - answer_bool
-    OK - answer_text
-    OK - insurances
-    OK - answer_age
-    checkbox
-    doctors
-    medicines    
-*/

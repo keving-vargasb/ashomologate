@@ -567,6 +567,15 @@ const applicationExample = {
           value: 'No'
         }
       ]
+    },
+    {
+      id: 'Q_HEALTHCARE_PROVIDER',
+      response: [
+        {
+          id: 0,
+          value: 'No'
+        }
+      ]
     }
   ]
 };
