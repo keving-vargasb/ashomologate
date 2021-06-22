@@ -210,7 +210,10 @@ export class Adminseg {
   }
 
   get adminsegQuestions(): any {
-    const questions = this.application.questions;
+    const questions = this.organizeQuestions();
+    console.log(questions);
+    /* const questions = this.application.questions;
+    console.log({questions})
 
     const questionsFiltered = questions.filter(
       question => question.id != 'Q_SMOKE' && question.id != 'Q_GENDER'
@@ -223,7 +226,25 @@ export class Adminseg {
       homologation = newArray;
     }
     console.log(homologation);
-    return homologation;
+    return homologation; */
+    return null;
+  }
+
+  organizeQuestions(): any {
+    let questions = [];
+
+    for (let question of this.application.questions) {
+      if (question.subQuestion) {
+        for (let subQuestion of question.subQuestion) {
+          questions.push(subQuestion);
+        }
+        continue;
+      }
+
+      questions.push(question);
+    }
+
+    return questions;
   }
 
   homologateQuestion(appQuestion): any {
@@ -234,7 +255,9 @@ export class Adminseg {
 
     for (let i = 0; i < homologation.questions.length; i++) {
       const homologationQuestionObject = homologation.questions[i];
+
       const response = appQuestion.response[i];
+
       result.push(
         this.manageSingleQuestion(homologationQuestionObject, response)
       );

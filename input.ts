@@ -225,7 +225,7 @@ const applicationExample = {
         }
       ]
     },
-    {
+    /*  {
       id: 'Q_ALCOHOL_CONSUMPTION',
       response: [
         {
@@ -251,7 +251,7 @@ const applicationExample = {
           value: 'Yes'
         }
       ]
-    },
+    }, */
     {
       id: 'Q_TREATMENT_HOSPITALIZED',
       value: 'Tratamientos...',
