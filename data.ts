@@ -476,6 +476,55 @@ const homolgationQuestions = {
         }
       }
     ]
+  },
+  Q_HAVE_FOLLOWING_CONDITIONS: {
+    questions: [
+      {
+        id: 455,
+        type: 'bool',
+        options: null
+      }
+    ]
+  },
+  Q_CURRENTLY_DISABLED: {
+    questions: [
+      {
+        id: 490,
+        type: 'bool',
+        options: null
+      }
+    ]
+  },
+  Q_PENDING_SURGERY: {
+    questions: [
+      {
+        id: 483,
+        type: 'bool',
+        options: null
+      }
+    ]
+  },
+  Q_ABNORMAL_RESULTS_SURGERIES: {
+    questions: [
+      {
+        id: 419,
+        type: 'bool',
+        options: null
+      }
+    ]
+  },
+  Q_ANY_TREATMENT: {
+    questions: [
+      {
+        id: 419,
+        type: 'radio',
+        options: {
+          0: 0,
+          1: 1,
+          2: 2
+        }
+      }
+    ]
   }
 };
 
