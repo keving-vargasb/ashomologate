@@ -254,7 +254,7 @@ export class Adminseg {
       case 'bool':
         return {
           question: homologationQuestionObject.id,
-          choice: response.id == 1 ? true : false
+          answer_bool: response.id == 1 ? true : false
         };
       case 'insurances':
         const insurances = this.application.insurances.acquired.map(
@@ -265,6 +265,11 @@ export class Adminseg {
           })
         );
         return insurances;
+      case 'text':
+        return {
+          question: homologationQuestionObject.id,
+          answer_text: response.value
+        };
     }
   }
 }
@@ -272,7 +277,7 @@ export class Adminseg {
 /*
     OK - choice (radio)
     OK - answer_bool
-    answer_text
+    OK - answer_text
     checkbox
     answer_age
     OK - insurances

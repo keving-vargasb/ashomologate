@@ -71,6 +71,88 @@ const homolgationQuestions = {
         option: null
       }
     ]
+  },
+  Q_EXTREME_ACTIVITIES: {
+    questions: [
+      {
+        id: 499,
+        type: 'bool',
+        option: null
+      }
+    ]
+  },
+  Q_DRUGS: {
+    questions: [
+      {
+        id: 406,
+        type: 'bool',
+        option: null
+      }
+    ]
+  },
+  Q_TREATMENT_HOSPITALIZED: {
+    questions: [
+      {
+        id: 408,
+        type: 'bool',
+        option: null
+      },
+      {
+        id: 409,
+        type: 'bool',
+        option: null
+      },
+      {
+        id: 410,
+        type: 'bool',
+        option: null
+      },
+      {
+        id: 411,
+        type: 'bool',
+        option: null
+      },
+      {
+        id: 412,
+        type: 'bool',
+        option: null
+      },
+      {
+        id: 413,
+        type: 'bool',
+        option: null
+      },
+      {
+        id: 414,
+        type: 'bool',
+        option: null
+      },
+      {
+        id: 415,
+        type: 'bool',
+        option: null
+      },
+      {
+        id: 481,
+        type: 'bool',
+        option: null
+      },
+      {
+        id: 416,
+        type: 'bool',
+        option: null
+      },
+      {
+        id: 417,
+        type: 'bool',
+        option: null
+      },
+      {
+        id: 418,
+        type: 'bool',
+        option: null
+      }
+    ]
   }
 };
 

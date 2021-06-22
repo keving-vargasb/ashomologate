@@ -251,6 +251,25 @@ const applicationExample = {
           value: 'Yes'
         }
       ]
+    },
+    {
+      id: 'Q_TREATMENT_HOSPITALIZED',
+      value: 'Tratamientos...',
+      type: null,
+      response: null,
+      subQuestion: [
+        {
+          id: 'Q_TREATMENT_HOSPITALIZED_1',
+          value: 'Cancer, tumor, leukemia, lymphoma, malignant lesion?',
+          type: 'bool',
+          response: [
+            {
+              id: '1',
+              value: 'Yes'
+            }
+          ]
+        }
+      ]
     }
   ]
 };
