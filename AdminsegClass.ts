@@ -250,13 +250,20 @@ export class Adminseg {
 
     for (let i = 0; i < homologation.questions.length; i++) {
       const homologationQuestionObject = homologation.questions[i];
-      //const response = appQuestion.response[i];
-      result.push(
-        this.manageSingleQuestion(
-          homologationQuestionObject,
-          appQuestion.response
-        )
+
+      const homologationQuestionResult = this.manageSingleQuestion(
+        homologationQuestionObject,
+        appQuestion.response
       );
+
+      if (Array.isArray(homologationQuestionResult)) {
+        const newArray = result;
+        newArray.concat(homologationQuestionResult);
+        result = newArray;
+        return;
+      }
+
+      result.push(homologationQuestionResult);
     }
 
     console.log(appQuestion.id, { result });
@@ -325,6 +332,21 @@ export class Adminseg {
         return {
           medicines
         };
+      case 'covid':
+        return [
+          {
+            question: 500,
+            answer_bool: true
+          },
+          {
+            question: 501,
+            answer_bool: true
+          },
+          {
+            question: 502,
+            answer_bool: true
+          }
+        ];
     }
   }
 }

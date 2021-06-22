@@ -576,6 +576,15 @@ const applicationExample = {
           value: 'No'
         }
       ]
+    },
+    {
+      id: 'Q_POSITIVE_RESULT_COVID_TEST',
+      response: [
+        {
+          id: 1,
+          value: 'Yes'
+        }
+      ]
     }
   ]
 };

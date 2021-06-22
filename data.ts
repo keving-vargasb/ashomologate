@@ -566,6 +566,15 @@ const homolgationQuestions = {
       }
     ]
   },
+  Q_POSITIVE_RESULT_COVID_TEST: {
+    questions: [
+      {
+        id: 500,
+        type: 'covid',
+        options: null
+      }
+    ]
+  },
   Q_AWAITING_RESULT_COVID_TEST: {
     questions: [
       {
