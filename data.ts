@@ -414,6 +414,52 @@ const homolgationQuestions = {
         }
       }
     ]
+  },
+  Q_TAKE_INSULIN: {
+    questions: [
+      {
+        id: 447,
+        type: 'bool',
+        options: null
+      }
+    ]
+  },
+  Q_DIABETES_MULTIPLE_1: {
+    questions: [
+      {
+        id: 448,
+        type: 'age',
+        options: null
+      }
+    ]
+  },
+  Q_DIABETES_MULTIPLE_2: {
+    questions: [
+      {
+        id: 497,
+        type: 'select',
+        options: {
+          0: 0,
+          1: 1,
+          2: 2,
+          3: 3,
+          4: 4
+        }
+      }
+    ]
+  },
+  Q_DIABETES_MULTIPLE_3: {
+    questions: [
+      {
+        id: 450,
+        type: 'select',
+        options: {
+          0: 0,
+          1: 1,
+          2: 2
+        }
+      }
+    ]
   }
 };
 
