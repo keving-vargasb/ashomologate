@@ -90,65 +90,10 @@ const homolgationQuestions = {
       }
     ]
   },
-  Q_TREATMENT_HOSPITALIZED: {
+  Q_TREATMENT_HOSPITALIZED_1: {
     questions: [
       {
         id: 408,
-        type: 'bool',
-        option: null
-      },
-      {
-        id: 409,
-        type: 'bool',
-        option: null
-      },
-      {
-        id: 410,
-        type: 'bool',
-        option: null
-      },
-      {
-        id: 411,
-        type: 'bool',
-        option: null
-      },
-      {
-        id: 412,
-        type: 'bool',
-        option: null
-      },
-      {
-        id: 413,
-        type: 'bool',
-        option: null
-      },
-      {
-        id: 414,
-        type: 'bool',
-        option: null
-      },
-      {
-        id: 415,
-        type: 'bool',
-        option: null
-      },
-      {
-        id: 481,
-        type: 'bool',
-        option: null
-      },
-      {
-        id: 416,
-        type: 'bool',
-        option: null
-      },
-      {
-        id: 417,
-        type: 'bool',
-        option: null
-      },
-      {
-        id: 418,
         type: 'bool',
         option: null
       }
@@ -4288,5 +4233,6 @@ export {
   adminsegWeightUnits,
   adminsegAgents,
   adminsegCountries,
-  homolgationQuestions
+  homolgationQuestions,
+  h
 };

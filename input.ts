@@ -225,8 +225,10 @@ const applicationExample = {
         }
       ]
     },
-    /*  {
+    /*   {
       id: 'Q_ALCOHOL_CONSUMPTION',
+      adminsegId: 484,
+      type: 'radio',
       response: [
         {
           id: 0,
@@ -254,17 +256,19 @@ const applicationExample = {
     }, */
     {
       id: 'Q_TREATMENT_HOSPITALIZED',
+      adminsegId: 407,
       value: 'Tratamientos...',
       type: null,
       response: null,
       subQuestion: [
         {
           id: 'Q_TREATMENT_HOSPITALIZED_1',
-          value: 'Cancer, tumor, leukemia, lymphoma, malignant lesion?',
+          adminsegId: 408,
           type: 'bool',
+          value: 'Cancer, tumor, leukemia, lymphoma, malignant lesion?',
           response: [
             {
-              id: '1',
+              id: 1,
               value: 'Yes'
             }
           ]

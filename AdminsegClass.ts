@@ -213,7 +213,7 @@ export class Adminseg {
     const questions = this.organizeQuestions();
     console.log(questions);
     /* const questions = this.application.questions;
-    console.log({questions})
+    //console.log({ questions });
 
     const questionsFiltered = questions.filter(
       question => question.id != 'Q_SMOKE' && question.id != 'Q_GENDER'
@@ -255,7 +255,6 @@ export class Adminseg {
 
     for (let i = 0; i < homologation.questions.length; i++) {
       const homologationQuestionObject = homologation.questions[i];
-
       const response = appQuestion.response[i];
 
       result.push(
@@ -303,7 +302,7 @@ export class Adminseg {
     OK - answer_text
     checkbox
     answer_age
-    OK - insurances
+    PENDING - insurances
     doctors
     medicines
     
