@@ -45,7 +45,7 @@ const homolgationQuestions = {
       },
       {
         id: 491,
-        type: 'insurance',
+        type: 'insurances',
         options: null
       }
     ]

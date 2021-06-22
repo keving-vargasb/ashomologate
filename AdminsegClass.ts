@@ -212,12 +212,16 @@ export class Adminseg {
   get adminsegQuestions(): any {
     const questions = this.application.questions;
 
-    const homologation = questions.map(question => {
-      if (question.id == 'Q_SMOKE') return;
-      return this.homologateQuestion(question);
-    });
+    const questionsFiltered = questions.filter(
+      question => question.id != 'Q_SMOKE' && question.id != 'Q_GENDER'
+    );
 
-    console.log({ homologation });
+    let homologation = [];
+
+    for (let question of questionsFiltered) {
+      const newArray = homologation.concat(this.homologateQuestion(question));
+      homologation = newArray;
+    }
     return homologation;
   }
 
@@ -225,20 +229,34 @@ export class Adminseg {
     const homologation = homolgationQuestions[appQuestion.id];
     if (!homologation) return null;
 
-    const question = homologation.questions[0];
-    const response = appQuestion.response[0];
+    let result = [];
 
-    switch (question.type) {
+    for (let i = 0; i < homologation.questions.length; i++) {
+      const homologationQuestionObject = homologation.questions[i];
+      const response = appQuestion.response[i];
+      result.push(
+        this.manageSingleQuestion(homologationQuestionObject, response)
+      );
+    }
+
+    console.log(appQuestion.id, { result });
+    return result;
+  }
+
+  manageSingleQuestion(homologationQuestionObject, response) {
+    switch (homologationQuestionObject.type) {
       case 'radio':
         return {
-          question: question.id,
-          choice: question.options[response.id]
+          question: homologationQuestionObject.id,
+          choice: homologationQuestionObject.options[response.id]
         };
       case 'bool':
         return {
-          question: question.id,
-          choice: response.id
+          question: homologationQuestionObject.id,
+          choice: response.id == 1 ? true : false
         };
+      case 'insurances':
+        return 'insurance';
     }
   }
 }

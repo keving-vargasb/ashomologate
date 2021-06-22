@@ -242,6 +242,15 @@ const applicationExample = {
           value: 'Yes'
         }
       ]
+    },
+    {
+      id: 'Q_CURRENTLY_COVERAGE',
+      response: [
+        {
+          id: 1,
+          value: 'Yes'
+        }
+      ]
     }
   ]
 };
