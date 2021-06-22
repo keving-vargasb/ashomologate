@@ -342,6 +342,78 @@ const homolgationQuestions = {
         }
       }
     ]
+  },
+  Q_SOME_FAMILY_DIED_FROM_DISEASE: {
+    questions: [
+      {
+        id: 480,
+        type: 'bool',
+        options: null
+      }
+    ]
+  },
+  Q_HIGH_CHOLESTEROL_MULTIPLE_1: {
+    questions: [
+      {
+        id: 460,
+        type: 'age',
+        options: null
+      }
+    ]
+  },
+  Q_HIGH_CHOLESTEROL_MULTIPLE_2: {
+    questions: [
+      {
+        id: 461,
+        type: 'select',
+        options: {
+          0: 0,
+          1: 1,
+          2: 2,
+          3: 3,
+          4: 4
+        }
+      }
+    ]
+  },
+  Q_HIGH_CHOLESTEROL_MULTIPLE_3: {
+    questions: [
+      {
+        id: 462,
+        type: 'radio',
+        options: {
+          0: 0,
+          1: 1
+        }
+      }
+    ]
+  },
+  Q_HIGH_CHOLESTEROL_MULTIPLE_4: {
+    questions: [
+      {
+        id: 488,
+        type: 'select',
+        options: {
+          0: 0,
+          1: 1,
+          2: 2,
+          3: 3,
+          4: 4
+        }
+      }
+    ]
+  },
+  Q_HIGH_CHOLESTEROL_MULTIPLE_5: {
+    questions: [
+      {
+        id: 489,
+        type: 'radio',
+        options: {
+          0: 0,
+          1: 1
+        }
+      }
+    ]
   }
 };
 

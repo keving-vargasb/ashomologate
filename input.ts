@@ -558,6 +558,15 @@ const applicationExample = {
           value: 'Less than 5 drinks per week'
         }
       ]
+    },
+    {
+      id: 'Q_SOME_FAMILY_DIED_FROM_DISEASE',
+      response: [
+        {
+          id: 0,
+          value: 'No'
+        }
+      ]
     }
   ]
 };
