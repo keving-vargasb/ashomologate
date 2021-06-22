@@ -222,6 +222,7 @@ export class Adminseg {
       const newArray = homologation.concat(this.homologateQuestion(question));
       homologation = newArray;
     }
+    console.log(homologation);
     return homologation;
   }
 
@@ -256,7 +257,14 @@ export class Adminseg {
           choice: response.id == 1 ? true : false
         };
       case 'insurances':
-        return 'insurance';
+        const insurances = this.application.insurances.acquired.map(
+          insurance => ({
+            company_name: insurance.companyName,
+            member_id: insurance.memberId,
+            effective_date: insurance.effectiveDate //TODO posible formato
+          })
+        );
+        return insurances;
     }
   }
 }
@@ -267,7 +275,7 @@ export class Adminseg {
     answer_text
     checkbox
     answer_age
-    insurances
+    OK - insurances
     doctors
     medicines
     
