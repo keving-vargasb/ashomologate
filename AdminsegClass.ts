@@ -327,12 +327,14 @@ export class Adminseg {
           doctors
         };
       case 'medicine':
+        if (!this.application.medicines) return;
         const medicines = this.application.medicines.map(medicine => ({
           name: medicine.name,
           dosage: medicine.dosage,
           condition: medicine.condition
         }));
         return {
+          question: homologationQuestionObject.id,
           medicines
         };
       case 'insurance_denied_type':
@@ -349,7 +351,7 @@ export class Adminseg {
         if (!this.application.covid.tests) return;
         return {
           question: homologationQuestionObject.id,
-          answer_date: this.application.covid.tests[0].testDate //TODO posible formato
+          date: this.application.covid.tests[0].testDate //TODO posible formato
         };
       case 'covid-bool':
         return {

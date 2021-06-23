@@ -597,10 +597,18 @@ const applicationExample = {
           value: 'No'
         }
       ]
-    } */
+    },
     {
       id: 'Q_TRAVELED_PAST_DAYS',
       details: 'a new york',
+      response: [
+        {
+          id: 1,
+          value: 'Yes'
+        }
+      ]
+    }*/ {
+      id: 'Q_TAKE_MEDICATION',
       response: [
         {
           id: 1,

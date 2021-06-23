@@ -617,17 +617,13 @@ const homolgationQuestions = {
       }
     ]
   },
-  Q_TAKE_MEDICATION_1: {
+  Q_TAKE_MEDICATION: {
     questions: [
       {
         id: 427,
         type: 'bool',
         options: null
-      }
-    ]
-  },
-  Q_TAKE_MEDICATION_2: {
-    questions: [
+      },
       {
         id: 425,
         type: 'medicine',
