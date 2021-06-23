@@ -218,10 +218,11 @@ export class Adminseg {
     let homologation = [];
 
     for (let question of questionsFiltered) {
-      const newArray = homologation.concat(this.homologateQuestion(question));
+      const questionHomologateResult = this.homologateQuestion(question);
+      const newArray = homologation.concat(questionHomologateResult);
       homologation = newArray;
     }
-    console.log({ homologation });
+    console.log(homologation);
     return homologation;
   }
 
@@ -257,16 +258,14 @@ export class Adminseg {
       );
 
       if (Array.isArray(homologationQuestionResult)) {
-        const newArray = result;
-        newArray.concat(homologationQuestionResult);
-        result = newArray;
-        return;
+        homologationQuestionResult.map(item => result.push(item));
+        continue;
       }
 
       result.push(homologationQuestionResult);
     }
 
-    console.log(appQuestion.id, { result });
+    //console.log(appQuestion.id, result);
     return result;
   }
 

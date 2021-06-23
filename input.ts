@@ -225,7 +225,7 @@ const applicationExample = {
         }
       ]
     },
-    {
+    /* {
       id: 'Q_ALCOHOL_CONSUMPTION',
       type: 'radio',
       response: [
@@ -558,7 +558,7 @@ const applicationExample = {
           value: 'Less than 5 drinks per week'
         }
       ]
-    },
+    },*/
     {
       id: 'Q_SOME_FAMILY_DIED_FROM_DISEASE',
       response: [
