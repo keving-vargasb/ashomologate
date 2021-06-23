@@ -228,7 +228,7 @@ const applicationExample = {
         }
       ]
     },
-    /* {
+    {
       id: 'Q_ALCOHOL_CONSUMPTION',
       type: 'radio',
       response: [
@@ -607,7 +607,8 @@ const applicationExample = {
           value: 'Yes'
         }
       ]
-    }*/ {
+    },
+    {
       id: 'Q_TAKE_MEDICATION',
       response: [
         {

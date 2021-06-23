@@ -223,7 +223,7 @@ export class Adminseg {
       const newArray = homologation.concat(questionHomologateResult);
       homologation = newArray;
     }
-    //console.log(homologation);
+    console.log(homologation);
     return homologation;
   }
 
@@ -266,7 +266,7 @@ export class Adminseg {
       result.push(homologationQuestionResult);
     }
 
-    console.log(appQuestion.id, result);
+    //console.log(appQuestion.id, result);
     return result;
   }
 
@@ -317,6 +317,7 @@ export class Adminseg {
           insurances
         };
       case 'doctor':
+        if (!this.application.doctors) return;
         const doctors = this.application.doctors.map(doctor => ({
           name: doctor.name,
           address: doctor.email,
@@ -324,6 +325,7 @@ export class Adminseg {
           condition: doctor.conditionTreated
         }));
         return {
+          question: homologationQuestionObject.id,
           doctors
         };
       case 'medicine':
