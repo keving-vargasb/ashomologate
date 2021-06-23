@@ -228,8 +228,8 @@ export class Adminseg {
       const newArray = homologation.concat(questionHomologateResult);
       homologation = newArray;
     }
-    console.log(homologation);
-    return homologation;
+
+    return homologation.filter(question => question !== undefined);
   }
 
   organizeQuestions(): any {
