@@ -26,8 +26,7 @@ export class Adminseg {
   }
 
   get homologationObject(): any {
-
-    const names = this.separateFullname(this.application.personalInfo.fullName)
+    const names = this.separateFullname(this.application.personalInfo.fullName);
 
     return {
       person: {
@@ -209,7 +208,7 @@ export class Adminseg {
           number: owner.indentification.number
         }
       ],
-      co_owner: 'jointOwner', //TODO siempre y cuando el owner es diferente a la poliza
+      co_owner: 'jointOwner',
       address: owner.address,
       country: this.findAdminsegCountry(owner.country.id).value,
       state: null, //TODO
