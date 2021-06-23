@@ -201,7 +201,7 @@ export class Adminseg {
           number: owner.indentification.number
         }
       ],
-      co_owner: null, //TODO no sé a que hace referencia "jointOwner"
+      co_owner: 'jointOwner', //TODO siempre y cuando el owner es diferente a la poliza
       address: owner.address,
       country: this.findAdminsegCountry(owner.country.id).value,
       state: null, //TODO
@@ -211,6 +211,7 @@ export class Adminseg {
 
   get adminsegQuestions(): any {
     const questions = this.organizeQuestions();
+    //console.log({ questions });
     const questionsFiltered = questions.filter(
       question => question.id != 'Q_SMOKE' && question.id != 'Q_GENDER'
     );
@@ -222,7 +223,7 @@ export class Adminseg {
       const newArray = homologation.concat(questionHomologateResult);
       homologation = newArray;
     }
-    console.log(homologation);
+    //console.log(homologation);
     return homologation;
   }
 
@@ -265,7 +266,7 @@ export class Adminseg {
       result.push(homologationQuestionResult);
     }
 
-    //console.log(appQuestion.id, result);
+    console.log(appQuestion.id, result);
     return result;
   }
 
@@ -302,6 +303,7 @@ export class Adminseg {
           checkbox: response.map(answer => answer.id)
         };
       case 'insurances':
+        if (!this.application.insurances.acquired) return;
         const insurances = this.application.insurances.acquired.map(
           insurance => ({
             company_name: insurance.companyName,
@@ -310,6 +312,7 @@ export class Adminseg {
           })
         );
         return {
+          question: homologationQuestionObject.id,
           insurances
         };
       case 'doctor':
@@ -331,21 +334,27 @@ export class Adminseg {
         return {
           medicines
         };
-      case 'covid':
-        return [
-          {
-            question: 500,
-            answer_bool: true
-          },
-          {
-            question: 501,
-            answer_bool: true
-          },
-          {
-            question: 502,
-            answer_bool: true
-          }
-        ];
+      case 'insurance_denied_type':
+        return {
+          question: homologationQuestionObject.id,
+          choice: this.application.insurances.denied[0].type.id
+        };
+      case 'insurance_denied_text':
+        return {
+          question: homologationQuestionObject.id,
+          answer_text: this.application.insurances.denied[0].details
+        };
+      case 'covid-date':
+        if (!this.application.covid.tests) return;
+        return {
+          question: homologationQuestionObject.id,
+          answer_date: this.application.covid.tests[0].testDate //TODO posible formato
+        };
+      case 'covid-bool':
+        return {
+          question: homologationQuestionObject.id,
+          answer_bool: this.application.covid.currentlySymptoms ? true : false
+        };
     }
   }
 }

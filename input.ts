@@ -147,7 +147,10 @@ const applicationExample = {
     denied: [
       {
         id: 'sdsdfs3434',
-        type: 'INSURANCE_LIFE',
+        type: {
+          id: 0,
+          value: 'Life insurance'
+        },
         value: 'Seguro de vida',
         details: 'Bla bla bla'
       }
@@ -224,7 +227,7 @@ const applicationExample = {
           value: 'Yes'
         }
       ]
-    },
+    }
     /* {
       id: 'Q_ALCOHOL_CONSUMPTION',
       type: 'radio',
@@ -246,6 +249,15 @@ const applicationExample = {
     },
     {
       id: 'Q_CURRENTLY_COVERAGE',
+      response: [
+        {
+          id: 1,
+          value: 'Yes'
+        }
+      ]
+    },
+    {
+      id: 'Q_INSURANCE_POLICY_DENIED',
       response: [
         {
           id: 1,
@@ -558,7 +570,7 @@ const applicationExample = {
           value: 'Less than 5 drinks per week'
         }
       ]
-    },*/
+    },
     {
       id: 'Q_SOME_FAMILY_DIED_FROM_DISEASE',
       response: [
@@ -576,13 +588,13 @@ const applicationExample = {
           value: 'No'
         }
       ]
-    },
-    {
+    } */
+    ,{
       id: 'Q_POSITIVE_RESULT_COVID_TEST',
       response: [
         {
-          id: 1,
-          value: 'Yes'
+          id: 0,
+          value: 'No'
         }
       ]
     }

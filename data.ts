@@ -59,7 +59,7 @@ const homolgationQuestions = {
       },
       {
         id: 479,
-        type: 'radio',
+        type: 'insurance_denied_type',
         option: {
           0: 0,
           1: 1
@@ -67,7 +67,7 @@ const homolgationQuestions = {
       },
       {
         id: 487,
-        type: 'text',
+        type: 'insurance_denied_text',
         option: null
       }
     ]
@@ -570,9 +570,19 @@ const homolgationQuestions = {
     questions: [
       {
         id: 500,
-        type: 'covid',
+        type: 'bool',
         options: null
-      }
+      },
+      {
+        id: 501,
+        type: 'covid-date',
+        options: null
+      },
+      {
+        id: 502,
+        type: 'covid-bool',
+        options: null
+      },
     ]
   },
   Q_AWAITING_RESULT_COVID_TEST: {
