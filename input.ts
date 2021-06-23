@@ -112,6 +112,10 @@ const applicationExample = {
       relationship: {
         id: 3,
         value: 'Son'
+      },
+      type: {
+        id: 1,
+        value: 'primary'
       }
     }
   ],

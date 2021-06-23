@@ -1,5 +1,6 @@
 import {
   adminsegAgents,
+  adminsegbeneficiaryTypes,
   adminsegCountries,
   adminsegFrequencies,
   adminsegGenders,
@@ -168,7 +169,11 @@ export class Adminseg {
           last_name: personType === 'rp' ? beneficiary.lastName : null,
           birthday: personType === 'rp' ? beneficiary.birthdayDate : null //TODO Posible formato
         },
-        type: null, //TODO No tenemos el valor satelite
+        type: this.findAdminsegItem(
+          Entities.beneficiaryType,
+          beneficiary.type.id,
+          adminsegbeneficiaryTypes
+        ).value,
         category: this.findAdminsegItem(
           Entities.relationship,
           beneficiary.relationship.id,

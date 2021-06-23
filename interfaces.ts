@@ -7,7 +7,8 @@ enum Entities {
   identityType = 'identity_type',
   personType = 'person_type',
   heightUnit = 'height_unit',
-  weightUnit = 'weight_unit'
+  weightUnit = 'weight_unit',
+  beneficiaryType = 'beneficiary_type'
 }
 
 interface AdminsegGender {
@@ -82,6 +83,12 @@ interface AdminsegCountry {
   code: string;
 }
 
+interface AdminsegBeneficiaryType {
+  value: number;
+  name: string;
+  appID: number;
+}
+
 export {
   Entities,
   AdminsegGender,
@@ -94,5 +101,6 @@ export {
   AdminsegHeightUnit,
   AdminsegWeightUnit,
   AdminsegAgent,
-  AdminsegCountry
+  AdminsegCountry,
+  AdminsegBeneficiaryType
 };

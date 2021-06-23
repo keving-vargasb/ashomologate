@@ -1,5 +1,6 @@
 import {
   AdminsegAgent,
+  AdminsegBeneficiaryType,
   AdminsegCountry,
   AdminsegFrequency,
   AdminsegGender,
@@ -837,6 +838,29 @@ const adminsegRelationships: AdminsegRelationship[] = [
     value: 38,
     name: 'Uncle',
     appID: 25
+  }
+];
+
+const adminsegbeneficiaryTypes: AdminsegBeneficiaryType[] = [
+  {
+    value: 1,
+    name: 'Primary',
+    appID: 1
+  },
+  {
+    value: 2,
+    name: 'Contingent',
+    appID: 2
+  },
+  {
+    value: 3,
+    name: 'Guardian',
+    appID: 3
+  },
+  {
+    value: 4,
+    name: 'Other',
+    appID: 4
   }
 ];
 
@@ -4775,5 +4799,5 @@ export {
   adminsegAgents,
   adminsegCountries,
   homolgationQuestions,
-  h
+  adminsegbeneficiaryTypes
 };
