@@ -26,10 +26,13 @@ export class Adminseg {
   }
 
   get homologationObject(): any {
+
+    const names = this.separateFullname(this.application.personalInfo.fullName)
+
     return {
       person: {
-        first_name: '', //TODO incomplete
-        last_name: '', //TODO incomplete
+        first_name: names.first_name,
+        last_name: names.last_name,
         gender: this.findAdminsegItem(
           Entities.gender,
           this.application.personalInfo.gender.id,
@@ -369,6 +372,36 @@ export class Adminseg {
         return {
           question: homologationQuestionObject.id,
           answer_text: appQuestion.details ? appQuestion.details : null
+        };
+    }
+  }
+
+  private separateFullname(fullname: string) {
+    const names = fullname.split(' ');
+    const namesClean = names.filter(name => {
+      if (name) return name;
+    });
+
+    switch (namesClean.length) {
+      case 1:
+        return {
+          first_name: namesClean[0],
+          last_name: null
+        };
+      case 2:
+        return {
+          first_name: namesClean[0],
+          last_name: namesClean[1]
+        };
+      case 3:
+        return {
+          first_name: namesClean[0],
+          last_name: `${namesClean[1]} ${namesClean[2]}`
+        };
+      default:
+        return {
+          first_name: `${namesClean[0]} ${namesClean[1]}`,
+          last_name: `${namesClean[2]} ${namesClean[3]}`
         };
     }
   }
