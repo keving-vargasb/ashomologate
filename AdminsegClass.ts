@@ -113,7 +113,7 @@ export class Adminseg {
     };
   }
 
-  findAdminsegItem(
+  private findAdminsegItem(
     searchEntity: Entities,
     appID: number | string,
     homologationData: any
@@ -126,7 +126,7 @@ export class Adminseg {
     return findedItem;
   }
 
-  findAdminsegCountry(appID: string) {
+  private findAdminsegCountry(appID: string) {
     const findedCountry = adminsegCountries.find(
       country => country.code === appID
     );
@@ -134,13 +134,13 @@ export class Adminseg {
     return findedCountry;
   }
 
-  findAdminsegAgent(agentCode: string) {
+  private findAdminsegAgent(agentCode: string) {
     const findedAgent = adminsegAgents.find(agent => agent.code === agentCode);
     if (!findedAgent) throw new Error('agent_not_found');
     return findedAgent;
   }
 
-  getAppQuestion(questionID: string) {
+  private getAppQuestion(questionID: string) {
     const findedQuestion = this.application.questions.find(
       question => question.id === questionID
     );
@@ -148,7 +148,7 @@ export class Adminseg {
     return findedQuestion;
   }
 
-  get adminsegBeneficiaries(): any {
+  private get adminsegBeneficiaries(): any {
     return this.application.beneficiaries.map(beneficiary => {
       const personType = this.findAdminsegItem(
         Entities.personType,
@@ -186,7 +186,7 @@ export class Adminseg {
     });
   }
 
-  get adminsegOwner(): any {
+  private get adminsegOwner(): any {
     const owner = this.application.owner;
 
     return {
@@ -214,7 +214,7 @@ export class Adminseg {
     };
   }
 
-  get adminsegQuestions(): any {
+  private get adminsegQuestions(): any {
     const questions = this.organizeQuestions();
     //console.log({ questions });
     const questionsFiltered = questions.filter(
@@ -232,7 +232,7 @@ export class Adminseg {
     return homologation.filter(question => question !== undefined);
   }
 
-  organizeQuestions(): any {
+  private organizeQuestions(): any {
     let questions = [];
 
     for (let question of this.application.questions) {
@@ -249,7 +249,7 @@ export class Adminseg {
     return questions;
   }
 
-  homologateQuestion(appQuestion): any {
+  private homologateQuestion(appQuestion): any {
     const homologation = homolgationQuestions[appQuestion.id];
     if (!homologation) return null;
 
@@ -275,7 +275,7 @@ export class Adminseg {
     return result;
   }
 
-  manageSingleQuestion(homologationQuestionObject, appQuestion) {
+  private manageSingleQuestion(homologationQuestionObject, appQuestion) {
     const response = appQuestion.response;
     switch (homologationQuestionObject.type) {
       case 'radio':
