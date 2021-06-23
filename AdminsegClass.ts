@@ -255,7 +255,7 @@ export class Adminseg {
 
       const homologationQuestionResult = this.manageSingleQuestion(
         homologationQuestionObject,
-        appQuestion.response
+        appQuestion
       );
 
       if (Array.isArray(homologationQuestionResult)) {
@@ -270,7 +270,8 @@ export class Adminseg {
     return result;
   }
 
-  manageSingleQuestion(homologationQuestionObject, response) {
+  manageSingleQuestion(homologationQuestionObject, appQuestion) {
+    const response = appQuestion.response;
     switch (homologationQuestionObject.type) {
       case 'radio':
         return {
@@ -354,6 +355,11 @@ export class Adminseg {
         return {
           question: homologationQuestionObject.id,
           answer_bool: this.application.covid.currentlySymptoms ? true : false
+        };
+      case 'traveled_text':
+        return {
+          question: homologationQuestionObject.id,
+          answer_text: appQuestion.details ? appQuestion.details : null
         };
     }
   }

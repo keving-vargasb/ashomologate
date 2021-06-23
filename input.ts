@@ -227,7 +227,7 @@ const applicationExample = {
           value: 'Yes'
         }
       ]
-    }
+    },
     /* {
       id: 'Q_ALCOHOL_CONSUMPTION',
       type: 'radio',
@@ -588,13 +588,23 @@ const applicationExample = {
           value: 'No'
         }
       ]
-    } */
-    ,{
+    },
+    {
       id: 'Q_POSITIVE_RESULT_COVID_TEST',
       response: [
         {
           id: 0,
           value: 'No'
+        }
+      ]
+    } */
+    {
+      id: 'Q_TRAVELED_PAST_DAYS',
+      details: 'a new york',
+      response: [
+        {
+          id: 1,
+          value: 'Yes'
         }
       ]
     }

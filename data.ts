@@ -582,7 +582,7 @@ const homolgationQuestions = {
         id: 502,
         type: 'covid-bool',
         options: null
-      },
+      }
     ]
   },
   Q_AWAITING_RESULT_COVID_TEST: {
@@ -599,6 +599,20 @@ const homolgationQuestions = {
       {
         id: 504,
         type: 'bool',
+        options: null
+      }
+    ]
+  },
+  Q_TRAVELED_PAST_DAYS: {
+    questions: [
+      {
+        id: 505,
+        type: 'bool',
+        options: null
+      },
+      {
+        id: 507,
+        type: 'traveled_text',
         options: null
       }
     ]
