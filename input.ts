@@ -140,14 +140,14 @@ const applicationExample = {
     acceptTermsDate: '2021-01-01 10:00:00'
   },
   insurances: {
-   /*  acquired: [
+    acquired: [
       {
         id: 'kaghskujhk23234',
         companyName: 'SURA',
         memberId: 'memberId',
         effectiveDate: '2021-01-01'
       }
-    ], */
+    ],
     denied: [
       {
         id: 'sdsdfs3434',
