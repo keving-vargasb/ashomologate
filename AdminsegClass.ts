@@ -1,7 +1,6 @@
 import {
   adminsegAgents,
   adminsegbeneficiaryTypes,
-  adminsegCountries,
   adminsegFrequencies,
   adminsegGenders,
   adminsegHeightUnits,
@@ -28,6 +27,10 @@ export class Adminseg {
   get homologationObject(): any {
     const names = this.separateFullname(this.application.personalInfo.fullName);
 
+    const measures = this.getAppQuestion('Q_WEIGHT_HEIGHT').response;
+    const heightMeasures = measures[0];
+    const weightMeasures = measures[1];
+
     return {
       person: {
         first_name: names.first_name,
@@ -38,29 +41,24 @@ export class Adminseg {
           adminsegGenders
         ).value,
         height_unit: this.findAdminsegItem(
-          Entities.heightUnit,
-          this.application.personalInfo.measures.height.measurementUnit,
+          Entities.weightUnit,
+          heightMeasures.size.id,
           adminsegHeightUnits
         ).value,
-        height: this.application.personalInfo.measures.height.value,
+        height: heightMeasures.value,
         weight_unit: this.findAdminsegItem(
           Entities.weightUnit,
-          this.application.personalInfo.measures.weight.measurementUnit,
+          weightMeasures.size.id,
           adminsegWeightUnits
         ).value,
-        weight: this.application.personalInfo.measures.weight.value,
+        weight: weightMeasures.value,
         addresses: [
           {
-            country: this.findAdminsegCountry(
-              this.application.personalInfo.location.country.id
-            ).value,
-            complete_address:
-              this.application.personalInfo.address1 +
-              ' ' +
-              this.application.personalInfo.address2
+            country: this.application.personalInfo.location.country.id,
+            complete_address:`${this.application.personalInfo.location.address1} ${this.application.personalInfo.location.address2}` 
           }
         ],
-        birthday: this.application.personalInfo.birthdayDate, //TODO posible formato
+        birthday: this.application.personalInfo.dateOfBirth, //TODO posible formato
         is_smoker: this.getAppQuestion('Q_SMOKE').response[0].id,
         emails: [
           {
@@ -77,29 +75,29 @@ export class Adminseg {
           {
             type: this.findAdminsegItem(
               Entities.identityType,
-              this.application.personalInfo.indentification.type.id,
+              this.application.personalInfo.identification.type.id,
               adminsegIdentityTypes
             ).value,
-            number: this.application.personalInfo.indentification.number
+            number: this.application.personalInfo.identification.number
           }
         ]
       },
       accept_condition_address: true,
       beneficiaries: this.adminsegBeneficiaries,
       owner_same_insured: this.application.ownerIsTheInsured,
-      owner: this.application.ownerIsTheInsured ? this.adminsegOwner : null,
+      owner: this.application.ownerIsTheInsured ? null : this.adminsegOwner,
       accept_terms: true,
-      date_accept_terms: this.application.legal.acceptTermsDate, //TODO posible formato
-      recurring_payment: true,
+      date_accept_terms:  this.application.legal ? this.application.legal.acceptTermsDate : null, //TODO posible formato y legal
+      recurring_payment: this.application.payment.method == 'CARD' ? true : false,
       quotation: {
         uuid: this.application.uuid,
-        agent: this.findAdminsegAgent(this.application.agent.code).value,
+        agent: this.application.agent ? this.findAdminsegAgent(this.application.agent.code).value : 57,
         product: this.findAdminsegItem(
           Entities.product,
-          this.application.product.id,
+          this.application.product ? this.application.product.id : 'p1',
           adminsegProducts
         ).value,
-        insured_value: this.application.insuredValue,
+        insured_value: parseFloat(this.application.insuredValue),
         years: this.application.selectedPlan.term.years,
         frequency: this.findAdminsegItem(
           Entities.frequency,
@@ -121,19 +119,11 @@ export class Adminseg {
     homologationData: any
   ) {
     const findedItem = homologationData.find(
-      (item: any) => item.appID === appID
+      (item: any) => item.appID == appID
     );
 
     if (!findedItem) throw new Error(`${searchEntity}_not_found`);
     return findedItem;
-  }
-
-  private findAdminsegCountry(appID: string) {
-    const findedCountry = adminsegCountries.find(
-      country => country.code === appID
-    );
-    if (!findedCountry) throw new Error('country_not_found');
-    return findedCountry;
   }
 
   private findAdminsegAgent(agentCode: string) {
@@ -202,15 +192,15 @@ export class Adminseg {
         {
           type: this.findAdminsegItem(
             Entities.identityType,
-            owner.indentification.type.id,
+            owner.identification.type,
             adminsegIdentityTypes
           ).value,
-          number: owner.indentification.number
+          number: owner.identification.number
         }
       ],
       co_owner: 'jointOwner',
       address: owner.address,
-      country: this.findAdminsegCountry(owner.country.id).value,
+      country: owner.country.id,
       state: null, //TODO
       city: null //TODO
     };
@@ -349,7 +339,7 @@ export class Adminseg {
       case 'insurance_denied_type':
         return {
           question: homologationQuestionObject.id,
-          choice: this.application.insurances.denied[0].type.id
+          choice: this.application.insurances.denied[0].type
         };
       case 'insurance_denied_text':
         return {

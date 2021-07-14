@@ -77,12 +77,6 @@ interface AdminsegAgent {
   code: string;
 }
 
-interface AdminsegCountry {
-  value: number;
-  name: string;
-  code: string;
-}
-
 interface AdminsegBeneficiaryType {
   value: number;
   name: string;
@@ -101,6 +95,5 @@ export {
   AdminsegHeightUnit,
   AdminsegWeightUnit,
   AdminsegAgent,
-  AdminsegCountry,
   AdminsegBeneficiaryType
 };
