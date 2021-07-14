@@ -1,10 +1,16 @@
 const applicationExample = {
-  _id: '60ef0eee626ed4713b3d003d',
+  _id: '60ef101e626ed4713b3d003e',
+  agent: {
+    code: 'AMX-345',
+    email: 'kevin@vantageio.com',
+    uid: 'cibHKyuAt7d0eFni0Fr2t4Yiy1m2'
+  },
+  applicationFromAgent: true,
   beneficiaries: [
     {
       birthdayDate: '7/14/1980',
-      firstName: 'Dfdf',
-      id: 'a1d945f9-ef27-433e-9fc6-b88dea54e48a',
+      firstName: 'Ddfdf',
+      id: 'c896b98a-9c01-4211-83a3-4c3420a09a7c',
       lastName: 'Dfdf',
       order: 0,
       percent: '100',
@@ -13,26 +19,26 @@ const applicationExample = {
         value: 'Individual'
       },
       relationship: {
-        id: 0,
-        value: 'Brother'
+        id: 1,
+        value: 'Hija'
       },
       type: {
         id: 1,
-        value: 'Primary'
+        value: 'Primario'
       }
     }
   ],
-  confirmedDate: '2021-07-14T16:24:27.380Z',
-  createdAt: '2021-07-14T16:21:02.491Z',
-  doctors: [
-    {
-      conditionTreated: 'A',
-      email: 'A',
-      id: '7381620c-88f2-4bf6-943f-e82ab985b17e',
-      name: 'A',
-      phone: 'A'
-    }
-  ],
+  confirmedDate: '2021-07-14T16:31:17.741Z',
+  contactInfo: {
+    familyName: 'Vargas',
+    finalPhone: '+578954574411',
+    fullName: 'Astest4 Vargas',
+    givenName: 'Astest4',
+    phone: '+578954574411',
+    phoneId: 'DBAFF6B7-A8E5-4FAD-B437-C4627383536D:ABPerson',
+    uid: 'twNoLCDuKhYztXZUzjKnTJmv8y13'
+  },
+  createdAt: '2021-07-14T16:26:06.783Z',
   healthData: {
     basal_energy_burned: [],
     biological_sex: {
@@ -55,26 +61,16 @@ const applicationExample = {
     steps: [],
     weight: null
   },
-  id: '60ef0eee626ed4713b3d003d',
-  insurances: {
-    acquired: [
-      {
-        companyName: 'De',
-        effectiveDate: '7/14/2021',
-        id: '329d7311-644c-400e-a4b4-41260edcbafb',
-        memberId: 'D'
-      }
-    ]
-  },
+  id: '60ef101e626ed4713b3d003e',
   insuredValue: '100000',
   isLink: false,
-  language: 'en',
+  language: 'es',
   ownerIsTheInsured: true,
   payment: {
     amount: 138.97,
-    createdAt: '2021-07-14T16:24:46.554Z',
+    createdAt: '2021-07-14T16:31:36.673Z',
     method: 'CARD',
-    name: '15 years / quarterly',
+    name: '10 años / quarterly',
     paymentSchedule: {
       interval: {
         length: 3,
@@ -85,14 +81,14 @@ const applicationExample = {
       trialOccurrences: 0
     },
     profile: {
-      customerProfileId: '500616437',
-      description: 'Profile created by Subscription: 7525930',
+      customerProfileId: '500616562',
+      description: 'Profile created by Subscription: 7525936',
       paymentProfile: {
         billTo: {
-          firstName: 'Astest3',
+          firstName: 'Astest4',
           lastName: 'vargas'
         },
-        customerPaymentProfileId: '501022686',
+        customerPaymentProfileId: '501022804',
         customerType: 'individual',
         payment: {
           creditCard: {
@@ -110,8 +106,8 @@ const applicationExample = {
     dateOfBirth: '7/14/1980',
     fullName: 'Sdsd',
     gender: {
-      id: '2',
-      value: '2'
+      id: '1',
+      value: '1'
     },
     healthData: {
       basal_energy_burned: [],
@@ -136,44 +132,45 @@ const applicationExample = {
       weight: null
     },
     identification: {
-      number: 'Sdsdsdsd',
+      number: 'Sdsd',
       type: {
-        id: 2,
-        value: 'Passport'
+        id: 1,
+        value: 'Identificación'
       }
     },
     location: {
-      address1: 'Sdsdsd',
+      address1: 'Sdsd',
       address2: '',
-      city: 'Sdsdsd',
+      city: 'Sdsd',
       country: {
         id: 'AR'
       },
       postalCode: ''
     },
-    passportData: 'timeout',
+    passportData: "'NoneType' object has no attribute 'to_dict'",
     phone: {
       code: '54',
-      number: 'sdsdsd'
+      number: 'sdsd'
     }
+  },
+  product: {
+    id: 'p1',
+    value: null
   },
   questions: [
     {
       id: 'Q_GENDER',
-      nameQuestion: 'Q_GENDER',
       numberQuestion: 1,
       response: [
         {
-          id: 2,
-          value: 'Female'
+          id: 1,
+          value: 'Masculino'
         }
       ],
       value: 'Gender'
     },
     {
       id: 'Q_SMOKE',
-      idQuestion: 'question2',
-      nameQuestion: 'Q_SMOKE',
       numberQuestion: 2,
       response: [
         {
@@ -181,8 +178,7 @@ const applicationExample = {
           value: 'No'
         }
       ],
-      subQuestions: null,
-      value: 'Have you smoked in the last 12 months?'
+      value: 'Smoker'
     },
     {
       id: 'Q_WEIGHT_HEIGHT',
@@ -191,7 +187,7 @@ const applicationExample = {
       numberQuestion: 3,
       response: [
         {
-          name: 'Height',
+          name: 'Estatura',
           size: {
             id: 1,
             value: 'Cm'
@@ -199,7 +195,7 @@ const applicationExample = {
           value: '167'
         },
         {
-          name: 'Weight',
+          name: 'Peso',
           size: {
             id: 1,
             value: 'Kg'
@@ -208,7 +204,7 @@ const applicationExample = {
         }
       ],
       subQuestions: null,
-      value: 'What is your height and weight?'
+      value: '¿Cuál es su estatura y peso?'
     },
     {
       id: 'Q_ALCOHOL_CONSUMPTION',
@@ -222,7 +218,8 @@ const applicationExample = {
         }
       ],
       subQuestions: null,
-      value: 'Which best describes your alcohol consumption? (drinks per week)'
+      value:
+        '¿Como describe su consumo de bebidas alcohólicas? (Bebidas por semana)'
     },
     {
       id: 'Q_MEMBER_FOLLOWING_POSITION',
@@ -237,38 +234,22 @@ const applicationExample = {
       ],
       subQuestions: null,
       value:
-        'Have you or any member of your direct family held any of the following positions?'
+        '¿Usted o algún miembro de su familia directa ha ocupado alguno de los siguientes puestos?'
     },
     {
-      detail: [
-        {
-          '0': {
-            name: 'Insurance Company',
-            value: 'De'
-          },
-          '1': {
-            name: 'Member ID',
-            value: 'D'
-          },
-          '2': {
-            name: 'Effective Date',
-            value: '7/14/2021'
-          }
-        }
-      ],
       id: 'Q_CURRENTLY_COVERAGE',
       idQuestion: 'question6',
       nameQuestion: 'Q_CURRENTLY_COVERAGE',
       numberQuestion: 6,
       response: [
         {
-          id: 1,
-          value: 'Yes'
+          id: 0,
+          value: 'No'
         }
       ],
       subQuestions: null,
       value:
-        'At the time of this application do you currently have health insurance with coverage for the last 12 months?'
+        '¿Al momento de esta solicitud, cuenta con cobertura de seguro de salud por los últimos 12 meses?'
     },
     {
       id: 'Q_INSURANCE_POLICY_DENIED',
@@ -283,7 +264,7 @@ const applicationExample = {
       ],
       subQuestions: null,
       value:
-        'Have you ever had a life or health insurance policy that has been denied, rated or issued with restrictions?'
+        '¿Alguna vez ha tenido una póliza de seguro de vida o salud que ha sido declinada, sobretasada o emitida con restricciones?'
     },
     {
       id: 'Q_EXTREME_ACTIVITIES',
@@ -297,7 +278,7 @@ const applicationExample = {
         }
       ],
       subQuestions: null,
-      value: 'Do you participate in any of the following Extreme Activities?'
+      value: '¿Participa usted en alguno de los siguientes deportes Extremos?'
     },
     {
       id: 'Q_DRUGS',
@@ -311,7 +292,7 @@ const applicationExample = {
         }
       ],
       subQuestions: null,
-      value: 'Do you have any history of substance abuse?'
+      value: '¿Tiene usted historial de abuso de sustancias?'
     },
     {
       id: 'Q_TREATMENT_HOSPITALIZED',
@@ -326,7 +307,7 @@ const applicationExample = {
             id: 0,
             value: 'No'
           },
-          value: 'Cancer, tumor, leukemia, lymphoma, malignant lesion?'
+          value: '¿Cáncer, tumor, leucemia, linfoma, lesión maligna?'
         },
         {
           id: 'Q_TREATMENT_HOSPITALIZED_2',
@@ -334,7 +315,7 @@ const applicationExample = {
             id: 0,
             value: 'No'
           },
-          value: 'Disorder of the stomach or digestive system?'
+          value: '¿Trastorno del estómago o del sistema digestivo?'
         },
         {
           id: 'Q_TREATMENT_HOSPITALIZED_3',
@@ -342,16 +323,16 @@ const applicationExample = {
             id: 0,
             value: 'No'
           },
-          value: 'Anemia, organ transplant, AIDS, or HIV?'
+          value: '¿Anemia, trasplante de órganos, SIDA o VIH?'
         },
         {
           id: 'Q_TREATMENT_HOSPITALIZED_4',
           response: {
-            id: 1,
-            value: 'Yes'
+            id: 0,
+            value: 'No'
           },
           value:
-            'High blood pressure/hypertension, high cholesterol, heart attack or any other disorder of the heart or circulatory system?'
+            '¿Presión arterial alta, colesterol alto, ataque cardíaco o cualquier otro trastorno del corazón o del sistema circulatorio?'
         },
         {
           id: 'Q_TREATMENT_HOSPITALIZED_5',
@@ -359,7 +340,8 @@ const applicationExample = {
             id: 0,
             value: 'No'
           },
-          value: 'Respiratory illnesses, diseases of the lungs or asthma?'
+          value:
+            '¿Enfermedades de los pulmones o del sistema respiratorio o Asma?'
         },
         {
           id: 'Q_TREATMENT_HOSPITALIZED_6',
@@ -367,7 +349,8 @@ const applicationExample = {
             id: 0,
             value: 'No'
           },
-          value: 'Seizures, paralysis or any other neurological disorder?'
+          value:
+            '¿Convulsiones, parálisis o cualquier otro trastorno neurológico?'
         },
         {
           id: 'Q_TREATMENT_HOSPITALIZED_7',
@@ -375,7 +358,7 @@ const applicationExample = {
             id: 0,
             value: 'No'
           },
-          value: 'Diabetes?'
+          value: '¿Diabetes?'
         },
         {
           id: 'Q_TREATMENT_HOSPITALIZED_8',
@@ -383,15 +366,7 @@ const applicationExample = {
             id: 0,
             value: 'No'
           },
-          value: 'Depression mental or anxiety disorder?'
-        },
-        {
-          id: 'Q_TREATMENT_HOSPITALIZED_9',
-          response: {
-            id: 0,
-            value: 'No'
-          },
-          value: 'Sexually transmitted diseases?'
+          value: '¿Depresión o desórdenes mentales?'
         },
         {
           id: 'Q_TREATMENT_HOSPITALIZED_10',
@@ -399,7 +374,7 @@ const applicationExample = {
             id: 0,
             value: 'No'
           },
-          value: 'Kidney or urinary system disorder?'
+          value: '¿Trastorno del riñón o del sistema urinario?'
         },
         {
           id: 'Q_TREATMENT_HOSPITALIZED_11',
@@ -407,7 +382,7 @@ const applicationExample = {
             id: 0,
             value: 'No'
           },
-          value: 'Disorders of the bones, joints, or muscles?'
+          value: '¿Trastornos de los huesos, articulaciones o músculos?'
         },
         {
           id: 'Q_TREATMENT_HOSPITALIZED_12',
@@ -415,116 +390,19 @@ const applicationExample = {
             id: 0,
             value: 'No'
           },
-          value: 'Immune system or connective tissue disorder?'
+          value: '¿Trastorno del sistema inmunológico o del tejido conectivo?'
+        },
+        {
+          id: 'Q_TREATMENT_HOSPITALIZED_9',
+          response: {
+            id: 0,
+            value: 'No'
+          },
+          value: '¿Enfermedades de transmisión sexual?'
         }
       ],
       value:
-        'Have you ever been diagnosed, received treatment or hospitalized for the following?'
-    },
-    {
-      id: 'Q_SOME_DISEASE',
-      idQuestion: 'question11',
-      nameQuestion: 'Q_SOME_DISEASE',
-      numberQuestion: 11,
-      response: null,
-      subQuestions: [
-        {
-          id: 'Q_SOME_DISEASE_1',
-          response: {
-            id: 0,
-            value: 'No'
-          },
-          value: 'High blood pressure/hypertension:'
-        },
-        {
-          id: 'Q_SOME_DISEASE_2',
-          response: {
-            id: 0,
-            value: 'No'
-          },
-          value: 'High cholesterol:'
-        },
-        {
-          id: 'Q_SOME_DISEASE_3',
-          response: {
-            id: 0,
-            value: 'No'
-          },
-          value: 'Heart attack:'
-        },
-        {
-          id: 'Q_SOME_DISEASE_4',
-          response: {
-            id: 0,
-            value: 'No'
-          },
-          value: 'Angina:'
-        },
-        {
-          id: 'Q_SOME_DISEASE_5',
-          response: {
-            id: 0,
-            value: 'No'
-          },
-          value: 'Arrhythmia / pacemaker:'
-        },
-        {
-          id: 'Q_SOME_DISEASE_6',
-          response: {
-            id: 0,
-            value: 'No'
-          },
-          value: 'Aneurysm:'
-        },
-        {
-          id: 'Q_SOME_DISEASE_7',
-          response: {
-            id: 0,
-            value: 'No'
-          },
-          value: 'Stroke:'
-        },
-        {
-          id: 'Q_SOME_DISEASE_8',
-          response: {
-            id: 0,
-            value: 'No'
-          },
-          value: 'Transient ischemic attack (TIA):'
-        },
-        {
-          id: 'Q_SOME_DISEASE_9',
-          response: {
-            id: 0,
-            value: 'No'
-          },
-          value: 'Heart valve disease / murmur:'
-        },
-        {
-          id: 'Q_SOME_DISEASE_10',
-          response: {
-            id: 0,
-            value: 'No'
-          },
-          value: 'Other heart or circulatory disease:'
-        }
-      ],
-      value: 'Have you ever had any of the following?'
-    },
-    {
-      id: 'Q_SOME_FAMILY_DIED_FROM_DISEASE',
-      idQuestion: 'question14',
-      nameQuestion: 'Q_SOME_FAMILY_DIED_FROM_DISEASE',
-      numberQuestion: 14,
-      response: [
-        {
-          id: 0,
-          value: 'No'
-        }
-      ],
-      subQuestions: null,
-      value:
-        'Have any of your direct family members died from cerebrovascular disease, coronary artery disease, heart disease or heart attacks prior to age 65?'
+        '¿Ha sido alguna vez diagnosticado, recibido tratamiento u hospitalizado por alguno de los siguientes?'
     },
     {
       id: 'Q_PENDING_SURGERY',
@@ -538,7 +416,7 @@ const applicationExample = {
         }
       ],
       subQuestions: null,
-      value: 'Do you have a pending or planned surgery/procedure?'
+      value: '¿Tiene algún procedimiento o cirugía planeada?'
     },
     {
       id: 'Q_ABNORMAL_RESULTS_SURGERIES',
@@ -553,42 +431,22 @@ const applicationExample = {
       ],
       subQuestions: null,
       value:
-        'Have you had any surgeries, abnormal results, or diseases not previously mentioned?'
+        '¿Ha tenido cirugías, resultados anormales o enfermedades no mencionados previamente?'
     },
     {
-      detail: [
-        {
-          '0': {
-            name: 'Name',
-            value: 'A'
-          },
-          '1': {
-            name: 'Email address',
-            value: 'A'
-          },
-          '2': {
-            name: 'Phone number',
-            value: 'A'
-          },
-          '3': {
-            name: 'Condition treated',
-            value: 'A'
-          }
-        }
-      ],
       id: 'Q_HEALTHCARE_PROVIDER',
       idQuestion: 'question25',
       nameQuestion: 'Q_HEALTHCARE_PROVIDER',
       numberQuestion: 25,
       response: [
         {
-          id: 1,
-          value: 'Yes'
+          id: 0,
+          value: 'No'
         }
       ],
       subQuestions: null,
       value:
-        'Do you have a physician and/or any healthcare provider that has treated you?'
+        '¿Tiene algún médico de atención primaria y/o proveedor de atención médica que lo haya tratado?'
     },
     {
       id: 'Q_ADMITTED_HOSPITAL',
@@ -602,7 +460,7 @@ const applicationExample = {
         }
       ],
       subQuestions: null,
-      value: 'Have you been admitted to a hospital within the last 24 months?'
+      value: '¿Ha sido admitido en el hospital en los últimos 24 meses?'
     },
     {
       id: 'Q_SOME_DISEASE_PAST_DAYS',
@@ -616,7 +474,7 @@ const applicationExample = {
         }
       ],
       subQuestions: null,
-      value: 'In the past 14 days, have you had any of the following?'
+      value: '¿En los últimos 14 días, ha tenido alguno de los siguientes?'
     },
     {
       id: 'Q_POSITIVE_RESULT_COVID_TEST',
@@ -630,7 +488,8 @@ const applicationExample = {
         }
       ],
       subQuestions: null,
-      value: 'Have you had a positive test result for COVID-19/SARS-CoV2?'
+      value:
+        '¿Ha tenido un resultado positivo en la prueba de COVID-19 / SARS-CoV2?'
     },
     {
       id: 'Q_AWAITING_RESULT_COVID_TEST',
@@ -645,7 +504,7 @@ const applicationExample = {
       ],
       subQuestions: null,
       value:
-        'Are you currently awaiting a test result or need to be tested for COVID-19/SARS-CoV2?'
+        '¿Actualmente está esperando los resultados de una prueba o necesita hacerse la prueba de COVID-19 / SARS-CoV2?'
     },
     {
       id: 'HAVE_CONTACT_SOMEONE_COVID_CONTAGED',
@@ -660,7 +519,7 @@ const applicationExample = {
       ],
       subQuestions: null,
       value:
-        'Within the last 14 days, have you been in contact with someone diagnosed with COVID-19/SARS-CoV2 or been under quarantine?'
+        '¿En los últimos 14 días, ha estado en contacto con alguien diagnosticado con COVID-19 / SARS-CoV2 o ha estado en cuarentena?'
     },
     {
       id: 'Q_TRAVELED_PAST_DAYS',
@@ -675,7 +534,7 @@ const applicationExample = {
       ],
       subQuestions: null,
       value:
-        'In the past 14 days have you traveled or been out of your city of residence?'
+        '¿En los últimos 14 días ha viajado o ha estado fuera de su ciudad de residencia permanente?'
     },
     {
       id: 'Q_TAKE_MEDICATION',
@@ -689,7 +548,7 @@ const applicationExample = {
         }
       ],
       subQuestions: null,
-      value: 'Do you take any medication?'
+      value: '¿Toma alguna medicación?'
     }
   ],
   selectedPlan: {
@@ -698,12 +557,12 @@ const applicationExample = {
       id: 'QUARTERLY',
       label: 'quarterly'
     },
-    id: 2,
+    id: 1,
     rate: '138.97',
     term: {
-      id: 'T15',
-      label: '15 years',
-      years: 15
+      id: 'T10',
+      label: '10 años',
+      years: 10
     }
   },
   status: {
@@ -711,9 +570,9 @@ const applicationExample = {
     value: 'Completed'
   },
   user: {
-    email: 'astest3@gmail.com',
+    email: 'astest4@gmail.com',
     phone: null,
-    uid: 'Ql03qktbl7hTw92pSAkS76GceSh1'
+    uid: 'vaLUoHCnigTfkWtosvY8U2RrVdA3'
   }
 };
 export { applicationExample };
