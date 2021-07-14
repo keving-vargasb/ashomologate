@@ -221,7 +221,7 @@ export class Adminseg {
       homologation = newArray;
     }
 
-    return homologation.filter(question => question !== undefined);
+    return homologation.filter(question => question !== undefined && question);
   }
 
   private organizeQuestions(): any {
