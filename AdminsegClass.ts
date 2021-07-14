@@ -182,8 +182,8 @@ export class Adminseg {
           adminsegRelationships
         ).value,
         percentage: beneficiary.percent,
-        reason: null,
-        details: null
+        reason: beneficiary.reason ?? null,
+        details: beneficiary.details ?? null
       };
     });
   }
@@ -327,7 +327,7 @@ export class Adminseg {
         if (!this.application.doctors) return;
         const doctors = this.application.doctors.map(doctor => ({
           name: doctor.name,
-          address: doctor.email,
+          address: doctor.email ?? null,
           phone: doctor.phone,
           condition: doctor.conditionTreated
         }));
