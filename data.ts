@@ -717,52 +717,37 @@ const adminsegRelationships: AdminsegRelationship[] = [
   {
     value: 39,
     name: 'Aunt',
-    appID: 1
+    appID: 7
   },
   {
     value: 32,
     name: 'Boyfriend',
-    appID: 2
+    appID: 8
   },
   {
     value: 25,
     name: 'Brother',
-    appID: 3
+    appID: 0
   },
   {
     value: 22,
     name: 'Brother in law',
-    appID: 4
-  },
-  {
-    value: 40,
-    name: 'Business Partner',
-    appID: 5
-  },
-  {
-    value: 42,
-    name: 'Collateral Assignment',
-    appID: 6
+    appID: 9
   },
   {
     value: 28,
     name: 'Daughter',
-    appID: 7
-  },
-  {
-    value: 41,
-    name: 'Employer',
-    appID: 8
+    appID: 1
   },
   {
     value: 24,
     name: 'Ex-Spouse',
-    appID: 9
+    appID: 10
   },
   {
     value: 35,
     name: 'Father',
-    appID: 10
+    appID: 2
   },
   {
     value: 36,
@@ -802,42 +787,42 @@ const adminsegRelationships: AdminsegRelationship[] = [
   {
     value: 29,
     name: 'Mother',
-    appID: 18
+    appID: 3
   },
   {
     value: 37,
     name: 'Mother in law',
-    appID: 19
+    appID: 18
   },
   {
     value: 34,
     name: 'Other',
-    appID: 20
+    appID: 21
   },
   {
     value: 26,
     name: 'Sister',
-    appID: 21
+    appID: 4
   },
   {
     value: 23,
     name: 'Sister in law',
-    appID: 22
+    appID: 19
   },
   {
     value: 27,
     name: 'Son',
-    appID: 23
+    appID: 5
   },
   {
     value: 21,
     name: 'Spouse',
-    appID: 24
+    appID: 6
   },
   {
     value: 38,
     name: 'Uncle',
-    appID: 25
+    appID: 20
   }
 ];
 

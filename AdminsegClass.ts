@@ -301,7 +301,7 @@ export class Adminseg {
           checkbox: response.map(answer => answer.id)
         };
       case 'insurances':
-        if (!this.application.insurances.acquired) return;
+        if (!this.application.insurances || !this.application.insurances.acquired) return;
         const insurances = this.application.insurances.acquired.map(
           insurance => ({
             company_name: insurance.companyName,
@@ -337,22 +337,25 @@ export class Adminseg {
           medicines
         };
       case 'insurance_denied_type':
+        if (!this.application.insurances || !this.application.insurances.denied) return;
         return {
           question: homologationQuestionObject.id,
           choice: this.application.insurances.denied[0].type
         };
       case 'insurance_denied_text':
+        if (!this.application.insurances || !this.application.insurances.denied) return;
         return {
           question: homologationQuestionObject.id,
           answer_text: this.application.insurances.denied[0].details
         };
       case 'covid-date':
-        if (!this.application.covid.tests) return;
+        if (!this.application.covid) return;
         return {
           question: homologationQuestionObject.id,
           date: this.application.covid.tests[0].testDate //TODO posible formato
         };
       case 'covid-bool':
+        if (!this.application.covid) return;
         return {
           question: homologationQuestionObject.id,
           answer_bool: this.application.covid.currentlySymptoms ? true : false
